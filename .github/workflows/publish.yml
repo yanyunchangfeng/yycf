@@ -1,0 +1,43 @@
+name: Publish Package to npmjs
+
+env:
+  TEST_SCRIPT: ${{vars.TEST_SCRIPT ||  'test'}}
+  BUILD_SCRIPT: ${{vars.BUILD_SCRIPT ||  'build'}}
+on:
+  workflow_dispatch: # 手动触发
+  push:
+    branches:
+      - main # 在 main 分支推送时触发
+      - dev/**
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: true
+
+      - name: Build project
+        run: pnpm ${{env.BUILD_SCRIPT}}
+
+      - name: Test project
+        run: pnpm ${{env.TEST_SCRIPT}}
+
+      # 运行 semantic-release 来自动管理版本和发布
+      - run: pnpm release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # 从 GitHub Secrets 中获取 NPM token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub token，用于创建 release 和标签

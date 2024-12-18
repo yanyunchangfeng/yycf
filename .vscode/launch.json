@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js 调试", //name：配置名称，显示在调试启动菜单中。
+      "type": "node", // 指定调试的环境类型。例如，node 用于 Node.js 调试，chrome 用于 Chrome 浏览器调试，python 用于 Python 调试，等等
+      "request": "launch", //配置类型，launch 表示启动调试，attach 表示连接到正在运行的进程进行调试。
+      "skipFiles": ["<node_internals>/**"], //可选字段，告诉调试器跳过某些文件，比如 Node.js 内部的库文件。
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next",
+      //runtimeExecutable 是 launch.json 配置文件中的一个可选字段，它用于指定要启动调试会话时所用的可执行文件的路径。
+      // 通常在默认情况下，VS Code 会自动找到合适的运行时（比如 Node.js 或 Chrome），但是你可以使用 runtimeExecutable 自定义这个路径。
+      // 使用场景
+      // 指定运行时：当你有多个版本的运行时，或者你的环境中没有全局安装某个工具时，你可以通过 runtimeExecutable 来指定具体的可执行文件路径。
+      // 自定义环境：例如，你可能在本地使用 Docker 容器、虚拟环境，或者其他特殊环境，可能需要指定特定的可执行文件来启动调试
+      // "program": "${workspaceFolder}/node_modules/next/dist/bin/next", //指定要启动的程序文件（例如 app.js）。
+      "args": ["dev"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal"
+      // console 字段可以设置以下几个值：
+      // internalConsole
+      // 将输出显示在 VS Code 的内置调试控制台中。这是最常见的选项。
+      // externalTerminal
+      // 在外部终端（如系统的命令行窗口）中显示输出。这个选项适用于需要交互或不希望输出混杂在 VS Code 的调试控制台中的情况。
+      // integratedTerminal
+      // 在 VS Code 的集成终端中显示输出。这个选项会在 VS Code 内部打开一个终端，适用于需要交互输入或者查看程序输出的场景。
+    }
+  ]
+}

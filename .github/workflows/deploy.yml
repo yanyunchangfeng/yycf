@@ -1,0 +1,55 @@
+name: Deploy
+
+env:
+  TEST_SCRIPT: ${{vars.TEST_SCRIPT ||  'test'}}
+  BUILD_SCRIPT: ${{vars.BUILD_SCRIPT ||  'build'}}
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev/**
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21.x'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: true
+
+      - name: Test project
+        run: pnpm ${{env.TEST_SCRIPT}}
+
+      - name: Build project
+        run: pnpm ${{env.BUILD_SCRIPT}}
+
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: dist
+
+      # - name: Deploy to GitHub Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4
