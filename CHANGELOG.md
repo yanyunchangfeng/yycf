@@ -1,3 +1,9 @@
+# [1.2.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.1.1...v1.2.0-rc.1) (2024-12-19)
+
+### Features
+
+- update header & api route ([b9762ec](https://github.com/yanyunchangfeng/yycf/commit/b9762ec1808c552a8a457343de3af8951d6366fb))
+
 ## [1.1.1](https://github.com/yanyunchangfeng/yycf/compare/v1.1.0...v1.1.1) (2024-12-19)
 
 ### Performance Improvements
