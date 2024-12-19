@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/yanyunchangfeng/yycf/compare/v1.1.0...v1.1.1) (2024-12-19)
+
+### Performance Improvements
+
+- photo/[id] page show ([db1f3b0](https://github.com/yanyunchangfeng/yycf/commit/db1f3b0a88b5aea30902be0076368c8a67f09557))
+
 ## [1.1.1-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.1.0...v1.1.1-rc.1) (2024-12-19)
 
 ### Performance Improvements
