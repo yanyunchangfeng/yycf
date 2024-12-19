@@ -1,46 +1,46 @@
+'use client';
+
 import React from 'react';
-import { AspectRatioImage } from '@/app/components';
-
-export const revalidate = 0;
-
-const getData = async () => {
-  const { signal } = new AbortController();
-  const results = await Promise.allSettled([
-    fetch('https://api.thecatapi.com/v1/images/search', {
-      signal
-    }),
-    fetch('https://api.thecatapi.com/v1/images/search', {
-      signal
-    }),
-    fetch('https://api.thecatapi.com/v1/images/search', {
-      signal
-    })
-  ]);
-  const data = results.map(async (result, index) => {
-    if (result.status === 'fulfilled') {
-      return await result.value.json();
-    } else {
-      return { error: `Request ${index + 1} failed: ${result.reason}` };
-    }
-  });
-
-  const finalData = await Promise.all(data);
-  const flatData = finalData.flatMap((innerArray) => innerArray);
-  console.log('🚀 ~ getData ~ flatData:', flatData);
-  return flatData as { id: string; url: string; width: number; height: number; error?: string }[];
-};
+import { AspectRatioImage, Skeleton } from '@/app/components';
+import { toast } from 'sonner';
+import { CatEntities } from '@/app/shared';
 
 const Home: React.FC = () => {
-  const data = React.use(getData());
+  const [cats, setCats] = React.useState<CatEntities>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  const fetchData = async () => {
+    const res = await fetch(`/api/cats`);
+    const data = await res.json();
+    if (!res.ok) {
+      const message = data?.message ?? 'Unknown error';
+      throw new Error(`Status: ${res.status} Reason: ${message}`);
+    }
+    return data as CatEntities;
+  };
+
+  const initialData = async () => {
+    try {
+      const data = await fetchData();
+      setCats(data);
+    } catch (err) {
+      toast.error(`${err}`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  React.useEffect(() => {
+    initialData();
+  }, []);
 
   const items = React.useMemo(() => {
-    return data.map((item) => {
-      if (item.error) {
-        return null;
-      }
-      return <AspectRatioImage key={item.id} src={item.url} alt="cat" width={item.width} height={item.height} />;
+    if (isLoading) {
+      return <Skeleton />;
+    }
+    return cats.map((item) => {
+      return <AspectRatioImage key={item.id} src={item.base64} alt="cat" width={item.width} height={item.height} />;
     });
-  }, [data]);
+  }, [cats, isLoading]);
 
   return <div className="flex-1 flex flex-col gap-4 items-center justify-center">{items}</div>;
 };

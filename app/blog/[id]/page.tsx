@@ -1,13 +1,13 @@
 'use client';
 
 import { FC } from 'react';
-import { BlogParams } from '@/app/shared';
+import { BlogParams, BlogEntities } from '@/app/shared';
 import React from 'react';
 import { Skeleton, AspectRatioImage } from '@/app/components';
 import { toast } from 'sonner';
 
 const Page: FC<BlogParams> = ({ params: { id } }) => {
-  const [photos, setPhotos] = React.useState<{ src: string; id: string }[]>([]);
+  const [photos, setPhotos] = React.useState<BlogEntities>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   const fetchData = async () => {
@@ -17,7 +17,7 @@ const Page: FC<BlogParams> = ({ params: { id } }) => {
       const message = data?.message ?? 'Unknown error';
       throw new Error(`Status: ${res.status} Reason: ${message}`);
     }
-    return data as { src: string; id: string }[];
+    return data as BlogEntities;
   };
   const fetchPhoto = async () => {
     try {
