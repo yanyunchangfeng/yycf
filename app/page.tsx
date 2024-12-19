@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import { type FC } from 'react';
-import { photos as originPhotos, isDynamic } from './shared';
 import React from 'react';
 import { Skeleton, AspectRatioImage } from '@/app/components';
 import { toast } from 'sonner';
@@ -10,9 +9,6 @@ const Home: FC = () => {
   const [photos, setPhotos] = React.useState<{ src: string; id: string }[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const fetchData = async () => {
-    if (!isDynamic) {
-      return originPhotos;
-    }
     const res = await fetch(`/api/photo`);
     const data = await res.json();
     if (!res.ok) {

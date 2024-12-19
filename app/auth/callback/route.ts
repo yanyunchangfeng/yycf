@@ -1,11 +1,11 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 // The client you created from the Server-Side Auth instructions
 import { createClient } from '@/app/utils/supabase/server';
 import { isDynamic } from '@/app/shared';
 
 export const dynamic = isDynamic ? 'force-dynamic' : 'force-static';
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get('code');
   // if "next" is in param, use it as the redirect URL

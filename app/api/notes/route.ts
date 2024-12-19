@@ -1,13 +1,7 @@
-import { isDynamic } from '@/app/shared';
 import { createClient } from '@/app/utils/supabase/server';
 import { NextRequest, NextResponse } from 'next/server';
 
-export const dynamic = isDynamic ? 'force-dynamic' : 'force-static';
-
 export async function GET(request: NextRequest) {
-  if (!isDynamic) {
-    return NextResponse.json([]);
-  }
   const url = new URL(request.url);
   const { searchParams } = url;
   let pageNo = Number(searchParams.get('pageNo'));
@@ -56,9 +50,6 @@ export async function GET(request: NextRequest) {
   );
 }
 export async function POST(request: NextRequest) {
-  if (!isDynamic) {
-    return NextResponse.json([]);
-  }
   const body = await request.json();
   const { title, user_id } = body;
   // 验证数据是否包含 title
@@ -77,9 +68,6 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-  if (!isDynamic) {
-    return NextResponse.json([]);
-  }
   const body = await request.json();
   const { id, title, user_id } = body;
   // 验证数据是否包含 title
