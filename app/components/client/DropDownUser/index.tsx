@@ -32,7 +32,7 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
   const handleLogOut = async () => {
     await logOut();
     setSearchNote(DEFAULT_NOTES.searchNote);
-    router.push('/blog');
+    router.push('/');
     router.refresh();
   };
   return (

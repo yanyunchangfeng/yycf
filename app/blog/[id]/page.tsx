@@ -1,17 +1,17 @@
 'use client';
 
 import { FC } from 'react';
-import { PhotoParams } from '@/app/shared';
+import { BlogParams } from '@/app/shared';
 import React from 'react';
 import { Skeleton, AspectRatioImage } from '@/app/components';
 import { toast } from 'sonner';
 
-const Page: FC<PhotoParams> = ({ params: { id } }) => {
+const Page: FC<BlogParams> = ({ params: { id } }) => {
   const [photos, setPhotos] = React.useState<{ src: string; id: string }[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   const fetchData = async () => {
-    const res = await fetch(`/api/photo/${id}`);
+    const res = await fetch(`/api/blog/${id}`);
     const data = await res.json();
     if (!res.ok) {
       const message = data?.message ?? 'Unknown error';

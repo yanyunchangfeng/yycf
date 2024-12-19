@@ -1,4 +1,4 @@
-export interface PhotoParams {
+export interface BlogParams {
   params: {
     id: string;
   };

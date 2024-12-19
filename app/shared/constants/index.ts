@@ -1,4 +1,4 @@
-export * from './photos';
+export * from './blog';
 export * from './isVercel';
 export * from './isDev';
 export * from './isStatic';
