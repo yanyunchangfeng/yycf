@@ -5,8 +5,9 @@ export let notesAbortController = new AbortController();
 
 export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> => {
   notesAbortController = new AbortController();
-  const signal =
-    AbortSignal?.any([notesAbortController.signal, AbortSignal.timeout(5000)]) ?? notesAbortController.signal;
+  // const signal =
+  //   AbortSignal?.any([notesAbortController.signal, AbortSignal.timeout(5000)]) ?? notesAbortController.signal;
+  const signal = notesAbortController.signal;
   try {
     const startDate = searchParams?.startDate ?? '';
     const endDate = searchParams?.endDate ?? '';
@@ -28,8 +29,9 @@ export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> 
 
 export const addNote = async (note: Partial<Note>) => {
   notesAbortController = new AbortController();
-  const signal =
-    AbortSignal?.any([notesAbortController.signal, AbortSignal.timeout(5000)]) ?? notesAbortController.signal;
+  // const signal =
+  //   AbortSignal?.any([notesAbortController.signal, AbortSignal.timeout(5000)]) ?? notesAbortController.signal;
+  const signal = notesAbortController.signal;
   const res = await fetch(`/api/notes`, {
     method: 'POST',
     body: JSON.stringify(note),
@@ -46,8 +48,9 @@ export const addNote = async (note: Partial<Note>) => {
 
 export const updateNote = async (note: Note) => {
   notesAbortController = new AbortController();
-  const signal =
-    AbortSignal?.any([notesAbortController.signal, AbortSignal.timeout(5000)]) ?? notesAbortController.signal;
+  // const signal =
+  //   AbortSignal?.any([notesAbortController.signal, AbortSignal.timeout(5000)]) ?? notesAbortController.signal;
+  const signal = notesAbortController.signal;
   const res = await fetch(`/api/notes`, { method: 'PUT', body: JSON.stringify(note), signal });
   if (!res.ok) {
     const message = (await res.json())?.message ?? 'Unknown error';
@@ -60,8 +63,9 @@ export const updateNote = async (note: Note) => {
 
 export const deleteNote = async (id: number) => {
   notesAbortController = new AbortController();
-  const signal =
-    AbortSignal?.any([notesAbortController.signal, AbortSignal.timeout(5000)]) ?? notesAbortController.signal;
+  // const signal =
+  //   AbortSignal?.any([notesAbortController.signal, AbortSignal.timeout(5000)]) ?? notesAbortController.signal;
+  const signal = notesAbortController.signal;
   const res = await fetch(`/api/notes`, {
     method: 'DELETE',
     headers: {
