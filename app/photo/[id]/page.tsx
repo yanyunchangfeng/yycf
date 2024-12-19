@@ -1,30 +1,17 @@
 'use client';
 
 import { FC } from 'react';
-import { isDynamic, PhotoParams, photos } from '@/app/shared';
+import { PhotoParams } from '@/app/shared';
 import React from 'react';
 import { Skeleton, AspectRatioImage } from '@/app/components';
 import { toast } from 'sonner';
-
-// Error: Page "/photo/[id]" is missing "generateStaticParams()" so it cannot be used with "output: export" config.
-// export async function generateStaticParams() {
-//   return photos.map((post) => ({
-//     id: post.id
-//   }));
-// }
-
-export const dynamic = isDynamic ? 'force-dynamic' : 'force-static';
 
 const Page: FC<PhotoParams> = ({ params: { id } }) => {
   const [photo, setPhoto] = React.useState<{ src: string; id: string }[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
   const fetchData = async () => {
-    if (!isDynamic) {
-      return [photos[1]];
-    }
     const res = await fetch(`/api/photo/${id}`);
-
     if (!res.ok) {
       const message = (await res.json())?.message ?? 'Unknown error';
       throw new Error(`Status: ${res.status} Reason: ${message}`);

@@ -1,8 +1,5 @@
 import { NextResponse } from 'next/server';
 import { cookies, headers } from 'next/headers';
-import { isDynamic } from '@/app/shared';
-
-export const dynamic = isDynamic ? 'force-dynamic' : 'force-static';
 
 export const GET = async () => {
   const headersList = headers();

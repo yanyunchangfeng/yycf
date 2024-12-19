@@ -1,4 +1,4 @@
-import { isDynamic, Note, Notes, notes, NoteSearchParams } from '@/app/shared';
+import { Note, Notes, NoteSearchParams } from '@/app/shared';
 import { toast } from 'sonner';
 
 export let notesAbortController = new AbortController();
@@ -6,9 +6,6 @@ export let notesAbortController = new AbortController();
 export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> => {
   notesAbortController = new AbortController();
   const signal = AbortSignal.any([notesAbortController.signal, AbortSignal.timeout(5000)]);
-  if (!isDynamic) {
-    return notes;
-  }
   try {
     const startDate = searchParams?.startDate ?? '';
     const endDate = searchParams?.endDate ?? '';
