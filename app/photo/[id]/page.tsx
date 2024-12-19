@@ -39,7 +39,7 @@ const Page: FC<PhotoParams> = ({ params: { id } }) => {
       return <Skeleton />;
     }
     const src = photos[0]?.src;
-    return <AspectRatioImage src={src} fill alt="dog" className="w-[400px]  mx-auto self-center" />;
+    return <AspectRatioImage src={src} fill alt="dog" className="w-[400px] mx-auto self-center" />;
   }, [isLoading, photos]);
 
   return PhotoItem;
