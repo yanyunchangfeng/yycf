@@ -4,9 +4,10 @@ import { type FC } from 'react';
 import React from 'react';
 import { Skeleton, AspectRatioImage } from '@/app/components';
 import { toast } from 'sonner';
+import { BlogEntities } from '@/app/shared';
 
 const Blog: FC = () => {
-  const [photos, setPhotos] = React.useState<{ src: string; id: string }[]>([]);
+  const [photos, setPhotos] = React.useState<BlogEntities>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const fetchData = async () => {
     const res = await fetch(`/api/blog`);
@@ -15,7 +16,7 @@ const Blog: FC = () => {
       const message = data?.message ?? 'Unknown error';
       throw new Error(`Status: ${res.status} Reason: ${message}`);
     }
-    return data as { src: string; id: string }[];
+    return data as BlogEntities;
   };
 
   const fetchPhotos = async () => {
@@ -36,10 +37,10 @@ const Blog: FC = () => {
     if (isLoading) {
       return <Skeleton />;
     }
-    return photos.map(({ src, id }) => {
+    return photos.map(({ id, base64 }) => {
       return (
         <Link key={id} href={`/blog/${id}`}>
-          <AspectRatioImage src={src} alt="dog" fill />
+          <AspectRatioImage src={base64} alt="dog" fill />
         </Link>
       );
     });
