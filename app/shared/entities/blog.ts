@@ -3,3 +3,11 @@ export interface BlogParams {
     id: string;
   };
 }
+
+export interface BlogEntity {
+  src: string;
+  id: string;
+  base64: string;
+}
+
+export type BlogEntities = BlogEntity[];
