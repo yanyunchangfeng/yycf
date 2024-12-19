@@ -7,23 +7,22 @@ import { Skeleton, AspectRatioImage } from '@/app/components';
 import { toast } from 'sonner';
 
 const Page: FC<PhotoParams> = ({ params: { id } }) => {
-  const [photo, setPhoto] = React.useState<{ src: string; id: string }[]>([]);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [photos, setPhotos] = React.useState<{ src: string; id: string }[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   const fetchData = async () => {
     const res = await fetch(`/api/photo/${id}`);
+    const data = await res.json();
     if (!res.ok) {
-      const message = (await res.json())?.message ?? 'Unknown error';
+      const message = data?.message ?? 'Unknown error';
       throw new Error(`Status: ${res.status} Reason: ${message}`);
     }
-    const data = await res.json();
     return data as { src: string; id: string }[];
   };
   const fetchPhoto = async () => {
     try {
-      setIsLoading(true);
       const data = await fetchData();
-      setPhoto(data);
+      setPhotos(data);
     } catch (err) {
       toast.error(`${err}`);
     } finally {
@@ -39,9 +38,9 @@ const Page: FC<PhotoParams> = ({ params: { id } }) => {
     if (isLoading) {
       return <Skeleton />;
     }
-    const src = photo[0]?.src;
+    const src = photos[0]?.src;
     return <AspectRatioImage src={src} fill alt="dog" className="w-[400px]  mx-auto self-center" />;
-  }, [isLoading, photo]);
+  }, [isLoading, photos]);
 
   return PhotoItem;
 };
