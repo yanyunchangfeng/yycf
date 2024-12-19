@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/yanyunchangfeng/yycf/compare/v1.0.0...v1.1.0) (2024-12-19)
+
+### Features
+
+- update blog page & api route ([ee9a131](https://github.com/yanyunchangfeng/yycf/commit/ee9a131f5500b1c04de07c6aacd61e2943d49a57))
+
 # [1.1.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.0.0...v1.1.0-rc.1) (2024-12-19)
 
 ### Features
