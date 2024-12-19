@@ -1,4 +1,4 @@
-export const photos = [
+export const blogs = [
   {
     src: 'https://images.dog.ceo/breeds/chippiparai-indian/Indian-Chippiparai.jpg',
     id: '1'
