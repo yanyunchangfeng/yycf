@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest, context: { params: object }) {
-  //  访问 /home, pathname 的值为 /home
   const pathname = request.nextUrl.pathname;
-  // 访问 /home?name=lee, searchParams 的值为 { 'name': 'lee' }
   const searchParams = request.nextUrl.searchParams;
   console.log('pathname', pathname);
   console.log('searchParams', searchParams);

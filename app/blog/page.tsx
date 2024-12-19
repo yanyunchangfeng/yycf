@@ -1,16 +1,24 @@
-import { FC, use } from 'react';
+import React from 'react';
 import { AspectRatioImage } from '@/app/components';
 
 const getData = async () => {
-  // 基于时间的重新验证;
-  // 使用基于时间的重新验证，你需要在使用 fetch 的时候设置 next.revalidate 选项（以秒为单位）：
-  const res = await fetch('https://api.thecatapi.com/v1/images/search', { next: { revalidate: 5 } });
+  const results = await Promise.allSettled([
+    fetch('https://api.thecatapi.com/v1/images/search', { next: { revalidate: 0 } }),
+    fetch('https://api.thecatapi.com/v1/images/search', { next: { revalidate: 0 } }),
+    fetch('https://api.thecatapi.com/v1/images/search', { next: { revalidate: 0 } })
+  ]);
+  const data = results.map(async (result, index) => {
+    if (result.status === 'fulfilled') {
+      return await result.value.json();
+    } else {
+      return { error: `Request ${index + 1} failed: ${result.reason}` };
+    }
+  });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch api.thecatapi.com data');
-  }
-  const data = await res.json();
-  return data?.[0]?.url;
+  const finalData = await Promise.all(data);
+  const flatData = finalData.flatMap((innerArray) => innerArray);
+  console.log('🚀 ~ getData ~ flatData:', flatData);
+  return flatData as { id: string; url: string; width: number; height: number; error?: string }[];
 };
 
 // 异步组件
@@ -23,14 +31,19 @@ const getData = async () => {
 //   );
 // };
 
-const Blog: FC = () => {
-  const src = use(getData());
+const Blog: React.FC = () => {
+  const data = React.use(getData());
 
-  return (
-    <div className="flex-1 flex items-center justify-center">
-      <AspectRatioImage src={src} alt="cat" fill />
-    </div>
-  );
+  const items = React.useMemo(() => {
+    return data.map((item) => {
+      if (item.error) {
+        return null;
+      }
+      return <AspectRatioImage key={item.id} src={item.url} alt="cat" width={item.width} height={item.height} />;
+    });
+  }, [data]);
+
+  return <div className="flex-1 flex flex-col gap-4 items-center justify-center">{items}</div>;
 };
 
 export default Blog;
