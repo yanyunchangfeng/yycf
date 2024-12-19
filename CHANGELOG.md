@@ -1,3 +1,9 @@
+# [1.3.0](https://github.com/yanyunchangfeng/yycf/compare/v1.2.0...v1.3.0) (2024-12-19)
+
+### Features
+
+- add api cats & utils server & shared cats ([5828fa3](https://github.com/yanyunchangfeng/yycf/commit/5828fa3e7ac12d946e235e30c20dd0bf7a442752))
+
 # [1.3.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.2.0...v1.3.0-rc.1) (2024-12-19)
 
 ### Features
