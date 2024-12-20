@@ -1,3 +1,9 @@
+# [1.4.0](https://github.com/yanyunchangfeng/yycf/compare/v1.3.1...v1.4.0) (2024-12-20)
+
+### Features
+
+- update api cats & blog ([d5a3029](https://github.com/yanyunchangfeng/yycf/commit/d5a3029c3479953dde7d9a3011d453a027d7588b))
+
 # [1.4.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.3.1...v1.4.0-rc.1) (2024-12-20)
 
 ### Features
