@@ -5,7 +5,7 @@ export interface BlogParams {
 }
 
 export interface BlogEntity {
-  src: string;
+  url: string;
   id: string;
   base64: string;
 }
