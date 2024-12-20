@@ -13,7 +13,7 @@ export const Notes: React.FC = () => {
       await updateNote(note);
       setEditIsOpen(false);
     } catch (err) {
-      toast.error(`${err}`);
+      toast.error(`${err}`, { position: 'top-center' });
     }
   };
   const handleCancel = async () => {
