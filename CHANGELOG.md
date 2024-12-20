@@ -1,3 +1,9 @@
+# [1.5.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.4.0...v1.5.0-rc.1) (2024-12-20)
+
+### Features
+
+- add rose green violet themes ([6432237](https://github.com/yanyunchangfeng/yycf/commit/64322375d83a9f0bb1c36c8ae8ce50af665cb36b))
+
 # [1.4.0](https://github.com/yanyunchangfeng/yycf/compare/v1.3.1...v1.4.0) (2024-12-20)
 
 ### Features
