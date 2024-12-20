@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/yanyunchangfeng/yycf/compare/v1.3.0...v1.3.1) (2024-12-20)
+
+### Bug Fixes
+
+- ios part of mobile browser not support ([026ba7c](https://github.com/yanyunchangfeng/yycf/commit/026ba7c4191725626116b5bc5f30d209dd486535))
+
 ## [1.3.1-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.3.0...v1.3.1-rc.1) (2024-12-19)
 
 ### Bug Fixes
