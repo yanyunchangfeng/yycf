@@ -39,7 +39,7 @@ export const AddNote: React.FC = () => {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <NoteDrawer open={addIsOpen} onOk={handleAddNote} onCancel={handleCancel} />
+      <NoteDrawer open={addIsOpen} onOk={handleAddNote} onCancel={handleCancel} data={{}} />
     </>
   );
 };
