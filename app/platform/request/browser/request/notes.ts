@@ -21,7 +21,7 @@ export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> 
     const data = await res.json();
     return data;
   } catch (e) {
-    toast.error(`${e}`);
+    toast.error(`${e}`, { position: 'top-center' });
     return { totalCount: 0, totalPages: 0, data: [], pageNo: searchParams.pageNo, pageSize: searchParams.pageSize };
   }
 };
