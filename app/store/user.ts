@@ -22,14 +22,11 @@ export const useUserStore = createPersistStore(
         supabase.auth.onAuthStateChange((event, session) => {
           switch (event) {
             case 'INITIAL_SESSION':
+            case 'SIGNED_IN':
+            case 'SIGNED_OUT':
               get().setUser(session?.user);
               break;
-            case 'SIGNED_IN':
-              // 这里不会触发 因为我们是在服务端登录后导航的，所以这里不会触发 因此主动调用fetchUser
-              // console.log('User signed in:', session);
-              // 本地没有触发 然而在vercel上可以触发 所以注释掉
-              break;
-            case 'SIGNED_OUT':
+            default:
               get().setUser(session?.user);
           }
           get().setLoading(false);
