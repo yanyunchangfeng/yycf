@@ -25,7 +25,7 @@ import {
 import { toast } from 'sonner';
 
 export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
-  const { user } = useUserStore();
+  const { user, fetchUser } = useUserStore();
   const { setSearchNote } = useNotesStore();
   const { isMobile } = useSidebar();
   const router = useRouter();
@@ -62,6 +62,9 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
       </DropdownMenuItem>
     );
   }, [user]);
+  React.useEffect(() => {
+    fetchUser();
+  }, []);
 
   return (
     <DropDownMenu
