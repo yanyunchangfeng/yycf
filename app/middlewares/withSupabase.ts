@@ -49,7 +49,7 @@ export const withSupabase = (
         const { data } = await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: {
-            redirectTo: `${origin}/auth/callback` // 以supabase auth url-configuration为准 https://supabase.com/dashboard/project/epcmgkebpuxlvuoplnrg/auth/url-configuration
+            redirectTo: `${origin}/auth/callback?next=/notes` // 以supabase auth url-configuration为准 https://supabase.com/dashboard/project/epcmgkebpuxlvuoplnrg/auth/url-configuration
           }
         });
         if (data?.url) {

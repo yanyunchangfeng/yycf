@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator
   // DropdownMenuGroup
 } from '@/components/ui/dropdown-menu';
-import { logOut } from '@/app/utils';
+import { logOut, logIn } from '@/app/utils';
 import { useRouter } from 'next/navigation';
 import { useNotesStore, useUserStore, DEFAULT_NOTES } from '@/app/store';
 import { SidebarMenuButton, useSidebar } from '@/components/ui/sidebar';
@@ -18,7 +18,8 @@ import {
   // BadgeCheck, Bell,
   ChevronsUpDown,
   // CreditCard,
-  LogOut
+  LogOut,
+  LogIn
   // Sparkles
 } from 'lucide-react';
 
@@ -35,6 +36,26 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
     router.push('/');
     router.refresh();
   };
+  const handleLogIn = async () => {
+    await logIn();
+  };
+  const dropDownItems = React.useMemo(() => {
+    if (user) {
+      return (
+        <DropdownMenuItem onClick={handleLogOut}>
+          <LogOut />
+          Log out
+        </DropdownMenuItem>
+      );
+    }
+    return (
+      <DropdownMenuItem onClick={handleLogIn}>
+        <LogIn />
+        Log in
+      </DropdownMenuItem>
+    );
+  }, [user]);
+
   return (
     <DropDownMenu
       open={open}
@@ -76,10 +97,7 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
             </DropdownMenuItem>
           </DropdownMenuGroup> */}
           {/* <DropdownMenuSeparator /> */}
-          <DropdownMenuItem onClick={handleLogOut} disabled={!user}>
-            <LogOut />
-            Log out
-          </DropdownMenuItem>
+          {dropDownItems}
         </DropdownMenuContent>
       }
     >
