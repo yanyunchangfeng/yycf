@@ -48,7 +48,6 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 240 5% 64.9%;
   }
-
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -81,9 +80,9 @@ body {
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring:  240 4.9% 83.9%;
+    --sidebar-ring: 240 4.9% 83.9%;
   }
-  .violet{
+  .violet {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
@@ -118,8 +117,7 @@ body {
     --sidebar-border: 200 20.1% 92%;
     --sidebar-ring: 262.1 82.4% 67.8%;
   }
-  .rose{
-
+  .rose {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -149,12 +147,12 @@ body {
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 346.8 77.2% 49.8%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent:  240 4.8% 95.9%;
+    --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 346.8 77.2% 49.8%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 346.8 76.3% 59.8%;
   }
-  .green{
+  .green {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -184,51 +182,12 @@ body {
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 142.1 76.2% 36.3%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent:  240 4.8% 95.9%;
+    --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 142.1 76.2% 36.3%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 142.1 75.3% 46.3%;
   }
 }
-/**
- * Dark mode 在@layer base 定义的 .dark 编译后未生成类名 故在此覆盖单独定义 保证darkMode生效 
- */
-
-/* .dark {
-  --background: 224 71.4% 4.1%;
-  --foreground: 210 20% 98%;
-  --foreground-light: 210 20% 70%;
-  --card: 224 71.4% 4.1%;
-  --card-foreground: 210 20% 98%;
-  --popover: 224 71.4% 4.1%;
-  --popover-foreground: 210 20% 98%;
-  --primary: 263.4 70% 50.4%;
-  --primary-foreground: 210 20% 98%;
-  --secondary: 215 27.9% 16.9%;
-  --secondary-foreground: 210 20% 98%;
-  --muted: 215 27.9% 16.9%;
-  --muted-foreground: 217.9 10.6% 64.9%;
-  --accent: 215 27.9% 16.9%;
-  --accent-foreground: 210 20% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 20% 98%;
-  --border: 215 27.9% 16.9%;
-  --input: 215 27.9% 16.9%;
-  --ring: 263.4 70% 50.4%;
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
-  --sidebar-background: 240 5.9% 10%;
-  --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 263.4 70% 50.4%;
-} */
 
 @layer base {
   * {
