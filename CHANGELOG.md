@@ -1,3 +1,9 @@
+# [1.6.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.5.0...v1.6.0-rc.1) (2024-12-21)
+
+### Features
+
+- add Log in for dropDownUser & add logIn util & update middleware, auth callback ([46d3291](https://github.com/yanyunchangfeng/yycf/commit/46d3291818f34d55b1877266b7520ff1c805070a))
+
 # [1.5.0](https://github.com/yanyunchangfeng/yycf/compare/v1.4.0...v1.5.0) (2024-12-20)
 
 ### Features
