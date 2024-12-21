@@ -1,3 +1,9 @@
+# [1.6.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.5.0...v1.6.0-rc.1) (2024-12-21)
+
+### Features
+
+- add Log in for dropDownUser & add logIn util ([a761444](https://github.com/yanyunchangfeng/yycf/commit/a7614442df7cf0cb1957474c71eff9413642fe8e))
+
 # [1.5.0](https://github.com/yanyunchangfeng/yycf/compare/v1.4.0...v1.5.0) (2024-12-20)
 
 ### Features
