@@ -22,6 +22,7 @@ import {
   LogIn
   // Sparkles
 } from 'lucide-react';
+import { toast } from 'sonner';
 
 export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
   const { user } = useUserStore();
@@ -31,13 +32,19 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleLogOut = async () => {
-    await logOut();
+    const { error } = await logOut();
+    if (error) {
+      return toast.error(`${error}`);
+    }
     setSearchNote(DEFAULT_NOTES.searchNote);
     router.push('/');
     router.refresh();
   };
   const handleLogIn = async () => {
-    await logIn();
+    const { error } = await logIn();
+    if (error) {
+      return toast.error(`${error}`);
+    }
   };
   const dropDownItems = React.useMemo(() => {
     if (user) {
