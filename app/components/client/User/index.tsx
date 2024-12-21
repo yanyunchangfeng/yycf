@@ -6,11 +6,7 @@ import React from 'react';
 import { Skeleton } from '@/app/components';
 
 export const User: React.FC = () => {
-  const { loading, user, fetchUser } = useUserStore();
-
-  React.useEffect(() => {
-    fetchUser();
-  }, []);
+  const { loading, user } = useUserStore();
 
   if (loading)
     return (
