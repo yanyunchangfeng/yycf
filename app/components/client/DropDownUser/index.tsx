@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator
   // DropdownMenuGroup
 } from '@/components/ui/dropdown-menu';
-import { logOut, logIn } from '@/app/utils';
+import { logOut, logIn, refreshSession } from '@/app/utils';
 import { useRouter } from 'next/navigation';
 import { useNotesStore, useUserStore, DEFAULT_NOTES } from '@/app/store';
 import { SidebarMenuButton, useSidebar } from '@/components/ui/sidebar';
@@ -34,7 +34,7 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
   const handleLogOut = async () => {
     const { error } = await logOut();
     if (error) {
-      return toast.error(`${error}`);
+      await refreshSession();
     }
     setSearchNote(DEFAULT_NOTES.searchNote);
     router.push('/');
