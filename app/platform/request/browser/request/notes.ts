@@ -6,7 +6,7 @@ export let notesAbortController = new AbortController();
 export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> => {
   notesAbortController = new AbortController();
   const signal =
-    AbortSignal?.any?.([notesAbortController.signal, AbortSignal.timeout(1000 * 7)]) ?? notesAbortController.signal;
+    AbortSignal?.any?.([notesAbortController.signal, AbortSignal?.timeout?.(1000 * 7)]) ?? notesAbortController.signal;
   try {
     const startDate = searchParams?.startDate ?? '';
     const endDate = searchParams?.endDate ?? '';
@@ -16,7 +16,7 @@ export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> 
     );
     if (!res.ok) {
       const message = (await res.json())?.message ?? 'Unknown error';
-      throw new Error(`Status: ${res.status} Reason: ${message}`);
+      throw new Error(`Fetch Notes Status: ${res.status} Reason: ${message}`);
     }
     const data = await res.json();
     return data;
@@ -37,7 +37,7 @@ export const addNote = async (note: Partial<Note>) => {
   });
   if (!res.ok) {
     const message = (await res.json())?.message ?? 'Unknown error';
-    throw new Error(`Status: ${res.status} Reason: ${message}`);
+    throw new Error(`Add Note Status: ${res.status} Reason: ${message}`);
   }
   const data = await res.json();
   const newId = data?.[0]?.id; // 获取新增记录的 id
@@ -51,7 +51,7 @@ export const updateNote = async (note: Note) => {
   const res = await fetch(`/api/notes`, { method: 'PUT', body: JSON.stringify(note), signal });
   if (!res.ok) {
     const message = (await res.json())?.message ?? 'Unknown error';
-    throw new Error(`Status: ${res.status} Reason: ${message}`);
+    throw new Error(`Update Note Status: ${res.status} Reason: ${message}`);
   }
   const data = await res.json();
   const newData = data?.[0];
@@ -73,7 +73,7 @@ export const deleteNote = async (id: number) => {
 
   if (!res.ok) {
     const message = (await res.json())?.message ?? 'Unknown error';
-    throw new Error(`Status: ${res.status} Reason: ${message}`);
+    throw new Error(`Delete Note Status: ${res.status} Reason: ${message}`);
   }
   const data = await res.json();
   const effectRows = data?.length;

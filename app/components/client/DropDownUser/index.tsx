@@ -34,7 +34,7 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
   const handleLogOut = async () => {
     const { error } = await logOut();
     if (error) {
-      return toast.error(`${error}`);
+      return toast.error(`log Out ${error}`);
     }
     setSearchNote(DEFAULT_NOTES.searchNote);
     router.push('/');
@@ -43,7 +43,7 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
   const handleLogIn = async () => {
     const { error } = await logIn();
     if (error) {
-      return toast.error(`${error}`);
+      return toast.error(`log In ${error}`);
     }
   };
   const dropDownItems = React.useMemo(() => {
