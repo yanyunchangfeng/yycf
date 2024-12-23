@@ -1,3 +1,9 @@
+# [1.7.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.6.0...v1.7.0-rc.1) (2024-12-23)
+
+### Features
+
+- add refreshSession ([6e11f13](https://github.com/yanyunchangfeng/yycf/commit/6e11f13e484fd79a016cd9b974baa01c9acac1c2))
+
 # [1.6.0](https://github.com/yanyunchangfeng/yycf/compare/v1.5.0...v1.6.0) (2024-12-21)
 
 ### Features
