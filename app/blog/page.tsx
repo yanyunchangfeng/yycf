@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { type FC } from 'react';
 import React from 'react';
-import { Skeleton, AspectRatioImage } from '@/app/components';
+import { Skeleton, AspectRatioImage, Header } from '@/app/components';
 import { toast } from 'sonner';
 import { BlogEntities } from '@/app/shared';
 
@@ -39,7 +39,7 @@ const Blog: FC = () => {
     }
     return photos.map(({ id, base64 }) => {
       return (
-        <Link key={id} href={`/blog/${id}`}>
+        <Link key={id} href={`/blog/${id}`} className="self-center">
           <AspectRatioImage src={base64} alt="dog" fill />
         </Link>
       );
@@ -48,7 +48,8 @@ const Blog: FC = () => {
 
   return (
     <React.Profiler id="home" onRender={console.log}>
-      <div className="flex flex-col justify-center items-center flex-1 gap-4">{photoTem} </div>
+      <Header />
+      <div className="flex items-center justify-center flex-1 flex-col gap-4">{photoTem}</div>
     </React.Profiler>
   );
 };

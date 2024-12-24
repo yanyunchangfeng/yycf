@@ -5,8 +5,9 @@ import '@/app/globals.css';
 import { ThemeProvider } from '@/app/components';
 import { Toaster } from '@/components/ui/sonner';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
-import { AppSidebar, Header } from '@/app/components';
+import { AppSidebar } from '@/app/components';
 import { cookies } from 'next/headers';
+import { themes } from '@/app/shared';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -38,21 +39,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-          themes={['light', 'dark', 'rose', 'green', 'violet']}
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange themes={themes}>
           <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar />
-            <SidebarInset className="overflow-x-hidden">
-              <div className="flex flex-col px-4 flex-1">
-                <Header />
-                <div className="flex flex-1">{children}</div>
-              </div>
-            </SidebarInset>
+            <SidebarInset className="overflow-x-hidden px-4">{children}</SidebarInset>
           </SidebarProvider>
         </ThemeProvider>
         <SpeedInsights />
