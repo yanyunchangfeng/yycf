@@ -15,7 +15,7 @@ import { usePathname, useParams } from 'next/navigation';
 import React from 'react';
 import { MENUITEMS } from '@/app/shared';
 
-export const Header: React.FC = () => {
+export const Header: React.FC<React.PropsWithChildren> = ({ children }) => {
   const pathName = usePathname();
   const params = useParams();
   const breamCrumbData = React.useMemo(() => {
@@ -74,6 +74,7 @@ export const Header: React.FC = () => {
           <BreadcrumbList>{BreadItems}</BreadcrumbList>
         </Breadcrumb>
       </div>
+      {children}
     </header>
   );
 };

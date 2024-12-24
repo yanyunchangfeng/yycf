@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import { BlogParams, BlogEntities } from '@/app/shared';
 import React from 'react';
-import { Skeleton, AspectRatioImage } from '@/app/components';
+import { Skeleton, AspectRatioImage, Header } from '@/app/components';
 import { toast } from 'sonner';
 
 const Page: FC<BlogParams> = ({ params: { id } }) => {
@@ -39,10 +39,15 @@ const Page: FC<BlogParams> = ({ params: { id } }) => {
       return <Skeleton />;
     }
     const src = photos[0]?.base64;
-    return <AspectRatioImage src={src} fill alt="dog" className="w-[400px] mx-auto self-center" />;
+    return <AspectRatioImage src={src} fill alt="dog" className="w-[400px]" />;
   }, [isLoading, photos]);
 
-  return PhotoItem;
+  return (
+    <>
+      <Header />
+      <div className="flex flex-1 justify-center items-center">{PhotoItem}</div>
+    </>
+  );
 };
 
 export default Page;

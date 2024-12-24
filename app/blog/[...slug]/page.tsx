@@ -1,3 +1,4 @@
+import { Header } from '@/app/components';
 import { FC } from 'react';
 
 interface BlogSlugProps {
@@ -8,9 +9,10 @@ interface BlogSlugProps {
 
 const BlogSlug: FC<BlogSlugProps> = ({ params }) => {
   return (
-    <div>
-      <h1>blog {JSON.stringify(params)}</h1>
-    </div>
+    <>
+      <Header />
+      <div className="flex flex-1 justify-center items-center">blog {JSON.stringify(params)}</div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { AspectRatioImage, Skeleton } from '@/app/components';
+import { AspectRatioImage, Skeleton, Header } from '@/app/components';
 import { toast } from 'sonner';
 import { CatEntities } from '@/app/shared';
 
@@ -42,7 +42,12 @@ const Home: React.FC = () => {
     });
   }, [cats, isLoading]);
 
-  return <div className="flex-1 flex flex-col gap-4 items-center justify-center">{items}</div>;
+  return (
+    <>
+      <Header />
+      <div className="flex items-center justify-center flex-1 flex-col gap-4">{items}</div>
+    </>
+  );
 };
 
 export default Home;
