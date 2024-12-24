@@ -14,7 +14,7 @@ export const AlertNote: React.FC = () => {
       await deleteNote();
       setDeleteIsOpen(false);
     } catch (err) {
-      toast.error(`${err}`, { position: 'top-center' });
+      toast.error(`Delete Note ${err}`, { position: 'top-center' });
     }
   };
   return (

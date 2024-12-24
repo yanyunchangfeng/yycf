@@ -15,7 +15,7 @@ export const AddNote: React.FC = () => {
       await addNote(note);
       setAddIsOpen(false);
     } catch (err) {
-      toast.error(`${err}`, { position: 'top-center' });
+      toast.error(`Add Note ${err}`, { position: 'top-center' });
     }
   };
   const handleOpen = async () => {

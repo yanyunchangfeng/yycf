@@ -24,7 +24,7 @@ const Home: React.FC = () => {
       const data = await fetchData();
       setCats(data);
     } catch (err) {
-      toast.error(`${err}`);
+      toast.error(`Fetch Cats ${err}`);
     } finally {
       setIsLoading(false);
     }
