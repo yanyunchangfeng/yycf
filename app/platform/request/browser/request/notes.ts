@@ -16,12 +16,12 @@ export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> 
     );
     if (!res.ok) {
       const message = (await res.json())?.message ?? 'Unknown error';
-      throw new Error(`Fetch Notes Status: ${res.status} Reason: ${message}`);
+      throw new Error(`Status: ${res.status} Reason: ${message}`);
     }
     const data = await res.json();
     return data;
   } catch (e) {
-    toast.error(`${e}`, { position: 'top-center' });
+    toast.error(`Fetch Notes ${e}`, { position: 'top-center' });
     return { totalCount: 0, totalPages: 0, data: [], pageNo: searchParams.pageNo, pageSize: searchParams.pageSize };
   }
 };
@@ -37,7 +37,7 @@ export const addNote = async (note: Partial<Note>) => {
   });
   if (!res.ok) {
     const message = (await res.json())?.message ?? 'Unknown error';
-    throw new Error(`Add Note Status: ${res.status} Reason: ${message}`);
+    throw new Error(`Status: ${res.status} Reason: ${message}`);
   }
   const data = await res.json();
   const newId = data?.[0]?.id; // 获取新增记录的 id
@@ -51,7 +51,7 @@ export const updateNote = async (note: Note) => {
   const res = await fetch(`/api/notes`, { method: 'PUT', body: JSON.stringify(note), signal });
   if (!res.ok) {
     const message = (await res.json())?.message ?? 'Unknown error';
-    throw new Error(`Update Note Status: ${res.status} Reason: ${message}`);
+    throw new Error(`Status: ${res.status} Reason: ${message}`);
   }
   const data = await res.json();
   const newData = data?.[0];
@@ -73,7 +73,7 @@ export const deleteNote = async (id: number) => {
 
   if (!res.ok) {
     const message = (await res.json())?.message ?? 'Unknown error';
-    throw new Error(`Delete Note Status: ${res.status} Reason: ${message}`);
+    throw new Error(`Status: ${res.status} Reason: ${message}`);
   }
   const data = await res.json();
   const effectRows = data?.length;

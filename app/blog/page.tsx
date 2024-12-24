@@ -19,18 +19,18 @@ const Blog: FC = () => {
     return data as BlogEntities;
   };
 
-  const fetchPhotos = async () => {
+  const initialData = async () => {
     try {
       const data = await fetchData();
       setPhotos(data);
     } catch (err) {
-      toast.error(`${err}`);
+      toast.error(`Fetch Blog ${err}`);
     } finally {
       setIsLoading(false);
     }
   };
   React.useEffect(() => {
-    fetchPhotos();
+    initialData();
   }, []);
 
   const photoTem = React.useMemo(() => {
