@@ -1,3 +1,9 @@
+# [1.8.0](https://github.com/yanyunchangfeng/yycf/compare/v1.7.0...v1.8.0) (2024-12-24)
+
+### Features
+
+- update layout & Notes page ([1a1173c](https://github.com/yanyunchangfeng/yycf/commit/1a1173cb0848bc1a51078d8063d711056b13c1ab))
+
 # [1.8.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.7.0...v1.8.0-rc.1) (2024-12-24)
 
 ### Features
