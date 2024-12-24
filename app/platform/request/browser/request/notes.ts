@@ -7,11 +7,10 @@ export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> 
   notesAbortController = new AbortController();
   const signal =
     AbortSignal?.any?.([notesAbortController.signal, AbortSignal?.timeout?.(1000 * 7)]) ?? notesAbortController.signal;
+  const { keyWord = '', startDate = '', endDate = '', pageNo = 1, pageSize = 10 } = searchParams;
   try {
-    const startDate = searchParams?.startDate ?? '';
-    const endDate = searchParams?.endDate ?? '';
     const res = await fetch(
-      `/api/notes?pageNo=${searchParams.pageNo}&pageSize=${searchParams.pageSize}&keyWord=${searchParams.keyWord}&startDate=${startDate}&endDate=${endDate}`,
+      `/api/notes?pageNo=${pageNo}&pageSize=${pageSize}&keyWord=${keyWord}&startDate=${startDate}&endDate=${endDate}`,
       { signal }
     );
     if (!res.ok) {
@@ -22,7 +21,7 @@ export const fetchData = async (searchParams: NoteSearchParams): Promise<Notes> 
     return data;
   } catch (e) {
     toast.error(`Fetch Notes ${e}`, { position: 'top-center' });
-    return { totalCount: 0, totalPages: 0, data: [], pageNo: searchParams.pageNo, pageSize: searchParams.pageSize };
+    return { totalCount: 0, totalPages: 0, data: [], pageNo, pageSize };
   }
 };
 

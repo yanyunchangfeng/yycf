@@ -6,7 +6,7 @@ import { CusDateRange } from '@/app/components';
 export const DEFAULT_NOTES = {
   notes: {
     pageNo: 1,
-    pageSize: 5,
+    pageSize: 10,
     totalCount: 0,
     totalPages: 0,
     data: [] as Note[]
@@ -17,7 +17,6 @@ export const DEFAULT_NOTES = {
   addIsOpen: false,
   openNote: {} as Partial<Note>,
   pending: true,
-  selectedPerPage: '5',
   perPages: [
     { label: `5/page`, value: '5' },
     { label: `10/page`, value: '10' },
@@ -36,29 +35,26 @@ export const useNotesStore = createPersistStore(
       };
     }
     const methods = {
-      async fetchNotes(searchParams?: NoteSearchParams) {
+      async fetchNotes(searchParams?: Partial<NoteSearchParams>) {
         set(() => ({ pending: true }));
-        searchParams = Object.assign(
+        const newSearchParams = Object.assign(
           {
             pageNo: get().notes.pageNo,
             pageSize: get().notes.pageSize,
-            keyWord: get().searchNote.keyWord.trim(),
+            keyWord: get().searchNote.keyWord?.trim(),
             startDate: get().searchNote.date?.from,
             endDate: get().searchNote.date?.to
           },
           searchParams
         );
-        const notes = await RequestService.notes.fetchData(searchParams);
-        set(() => ({
-          selectedPerPage: get().perPages.find((item) => Number(item.value) === notes.pageSize)?.value
-        }));
+        const notes = await RequestService.notes.fetchData(newSearchParams);
         set(() => ({ notes, pending: false }));
       },
       async addNote(note: Partial<Note>) {
         const id = await RequestService.notes.addNote(note);
         if (!id) return;
         set(() => ({ searchNote: DEFAULT_NOTES.searchNote }));
-        get().fetchNotes({ pageNo: 1, pageSize: get().notes.pageSize, keyWord: get().searchNote.keyWord });
+        get().fetchNotes({ pageNo: 1 });
       },
       async updateNote(note: Note) {
         const data = await RequestService.notes.updateNote(note);
@@ -85,9 +81,8 @@ export const useNotesStore = createPersistStore(
       setOpenNote(note: Note) {
         set(() => ({ openNote: note }));
       },
-      setSelectedPerPage(selectedPerPage: string) {
-        set(() => ({ selectedPerPage }));
-        set(() => ({ notes: { ...get().notes, pageSize: Number(selectedPerPage) } }));
+      setSelectedPerPage(pageSize: string) {
+        set(() => ({ notes: { ...get().notes, pageSize: Number(pageSize) } }));
         get().fetchNotes();
       },
       setSearchNote(searchNote: Partial<typeof DEFAULT_NOTES.searchNote>) {

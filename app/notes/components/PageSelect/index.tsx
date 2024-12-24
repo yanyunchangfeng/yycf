@@ -3,9 +3,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useNotesStore } from '@/app/store';
 
 export const PageSelect: React.FC = () => {
-  const { perPages, selectedPerPage, setSelectedPerPage } = useNotesStore();
+  const { perPages, setSelectedPerPage, notes } = useNotesStore();
   return (
-    <Select value={String(selectedPerPage)} onValueChange={setSelectedPerPage}>
+    <Select value={String(notes.pageSize)} onValueChange={setSelectedPerPage}>
       <SelectTrigger className="w-[100px]">
         <SelectValue />
       </SelectTrigger>
