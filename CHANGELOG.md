@@ -1,3 +1,9 @@
+# [1.9.0](https://github.com/yanyunchangfeng/yycf/compare/v1.8.0...v1.9.0) (2024-12-24)
+
+### Features
+
+- update notes store ([71915f9](https://github.com/yanyunchangfeng/yycf/commit/71915f900375f690fc1af02e036f49cfa9169add))
+
 # [1.9.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.8.0...v1.9.0-rc.1) (2024-12-24)
 
 ### Features
