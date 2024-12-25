@@ -1,3 +1,9 @@
+# [1.11.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.10.0...v1.11.0-rc.1) (2024-12-25)
+
+### Features
+
+- update AddNote & NoteDrawer ([4378187](https://github.com/yanyunchangfeng/yycf/commit/437818780b6fa84c51699d9910b70dc6cf6b7a8a))
+
 # [1.10.0](https://github.com/yanyunchangfeng/yycf/compare/v1.9.0...v1.10.0) (2024-12-25)
 
 ### Features
