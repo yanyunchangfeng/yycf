@@ -1,3 +1,9 @@
+# [1.10.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.9.0...v1.10.0-rc.1) (2024-12-25)
+
+### Features
+
+- update notes page , AddNote , NotesHeader ([33e6cf4](https://github.com/yanyunchangfeng/yycf/commit/33e6cf4aa8f82c03c9fe196f373d2828d9ae6f95))
+
 # [1.9.0](https://github.com/yanyunchangfeng/yycf/compare/v1.8.0...v1.9.0) (2024-12-24)
 
 ### Features
