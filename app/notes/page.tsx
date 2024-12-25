@@ -1,6 +1,14 @@
 'use client';
 
-import { AlertNote, Notes, PaganitionContainer, NotesHeader, SearchNoteInput } from '@/app/notes/components';
+import {
+  AlertNote,
+  Notes,
+  PaganitionContainer,
+  NotesHeader,
+  SearchNoteInput,
+  SearchNoteDate,
+  AddNote
+} from '@/app/notes/components';
 import { Header } from '@/app/components';
 import { useSidebar } from '@/components/ui/sidebar';
 import React from 'react';
@@ -11,13 +19,13 @@ const NotePage: React.FC = () => {
     if (isMobile) {
       return (
         <>
-          <Header>
-            <div className="flex gap-2 flex-1 justify-end">
-              <SearchNoteInput />
-            </div>
-          </Header>
+          <Header />
           <div className="flex flex-col gap-2 flex-1">
-            <NotesHeader />
+            <NotesHeader>
+              <SearchNoteInput />
+              <SearchNoteDate />
+              <AddNote />
+            </NotesHeader>
             <Notes />
             <PaganitionContainer />
             <AlertNote />
@@ -28,10 +36,11 @@ const NotePage: React.FC = () => {
     return (
       <>
         <Header>
-          <div className="flex gap-2 flex-1 justify-end">
-            <NotesHeader className="max-sm:hidden" />
+          <NotesHeader className="flex gap-2 flex-1 justify-end max-sm:hidden">
+            <AddNote />
+            <SearchNoteDate />
             <SearchNoteInput />
-          </div>
+          </NotesHeader>
         </Header>
         <div className="flex flex-col gap-2 flex-1">
           <Notes />
