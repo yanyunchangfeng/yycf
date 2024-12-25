@@ -11,8 +11,8 @@ interface NoteDrawerProps {
   data?: Partial<Note>;
 }
 
-export const NoteDrawer: React.FC<NoteDrawerProps> = ({ open, data = {}, onOk, onCancel }) => {
-  const [title, setTitle] = React.useState(data.title);
+export const NoteDrawer: React.FC<NoteDrawerProps> = ({ open, data, onOk, onCancel }) => {
+  const [title, setTitle] = React.useState(data?.title);
   const { user } = useUserStore();
   const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
@@ -27,7 +27,7 @@ export const NoteDrawer: React.FC<NoteDrawerProps> = ({ open, data = {}, onOk, o
   };
 
   React.useEffect(() => {
-    setTitle(data.title);
+    setTitle(data?.title);
   }, [data]);
 
   React.useEffect(() => {
@@ -42,7 +42,7 @@ export const NoteDrawer: React.FC<NoteDrawerProps> = ({ open, data = {}, onOk, o
   }, [open]);
 
   return (
-    <Drawer open={open} onCancel={handleCancel} onOk={handleOk} okDisabled={!title || title === data.title}>
+    <Drawer open={open} onCancel={handleCancel} onOk={handleOk} okDisabled={!title || title === data?.title}>
       <div className="p-4 pb-0">
         <Textarea
           rows={5}

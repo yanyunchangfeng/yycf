@@ -10,9 +10,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 
 export const AddNote: React.FC = () => {
   const { setAddIsOpen, addIsOpen, addNote } = useNotesStore();
-  const data = React.useMemo(() => {
-    return {};
-  }, []);
   const handleAddNote = async (note: Partial<Note>) => {
     try {
       await addNote(note);
@@ -42,7 +39,7 @@ export const AddNote: React.FC = () => {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <NoteDrawer open={addIsOpen} onOk={handleAddNote} onCancel={handleCancel} data={data} />
+      <NoteDrawer open={addIsOpen} onOk={handleAddNote} onCancel={handleCancel} data={{}} />
     </>
   );
 };
