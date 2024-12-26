@@ -15,8 +15,9 @@ import {
 import { DropDownUser, ModeToggle } from '@/app/components';
 import { MENUITEMS } from '@/app/shared';
 import { usePathname } from 'next/navigation';
+import React from 'react';
 
-export function AppSidebar() {
+export const AppSidebar: React.FC<React.PropsWithChildren> = ({ children }) => {
   const pathName = usePathname();
   return (
     <Sidebar collapsible="icon">
@@ -49,10 +50,10 @@ export function AppSidebar() {
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
-            <DropDownUser />
+            <DropDownUser>{children}</DropDownUser>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
   );
-}
+};

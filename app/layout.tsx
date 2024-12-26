@@ -8,6 +8,7 @@ import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/app/components';
 import { cookies } from 'next/headers';
 import { themes } from '@/app/shared';
+import { User } from '@/app/components/server/User';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -41,7 +42,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange themes={themes}>
           <SidebarProvider defaultOpen={defaultOpen}>
-            <AppSidebar />
+            <AppSidebar>
+              <User />
+            </AppSidebar>
             <SidebarInset className="overflow-x-hidden px-4">{children}</SidebarInset>
           </SidebarProvider>
         </ThemeProvider>

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { DropDownMenu } from '@/app/components';
-import { User } from '@/app/components';
 import {
   DropdownMenuItem,
   DropdownMenuLabel,
@@ -24,7 +23,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 
-export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
+export const DropDownUser: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { user, fetchUser } = useUserStore();
   const { setSearchNote } = useNotesStore();
   const { isMobile } = useSidebar();
@@ -80,9 +79,7 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
           sideOffset={4}
         >
           <DropdownMenuLabel className="p-0 font-normal">
-            <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-              <User />
-            </div>
+            <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">{children}</div>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           {/* <DropdownMenuGroup>
@@ -115,7 +112,7 @@ export const DropDownUser: React.FC<React.PropsWithChildren> = () => {
         size="lg"
         className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
       >
-        <User />
+        {children}
         <ChevronsUpDown className="ml-auto size-4" />
       </SidebarMenuButton>
     </DropDownMenu>
