@@ -1,3 +1,9 @@
+# [1.12.0](https://github.com/yanyunchangfeng/yycf/compare/v1.11.0...v1.12.0) (2024-12-26)
+
+### Features
+
+- update server user component ([c1f32d5](https://github.com/yanyunchangfeng/yycf/commit/c1f32d5430f4d0797447cc943a63f99de4fcc54f))
+
 # [1.12.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.11.0...v1.12.0-rc.1) (2024-12-26)
 
 ### Features
