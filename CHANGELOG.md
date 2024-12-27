@@ -1,3 +1,9 @@
+# [1.14.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.13.0...v1.14.0-rc.1) (2024-12-27)
+
+### Features
+
+- update pkg dev & host.js ([fb39f38](https://github.com/yanyunchangfeng/yycf/commit/fb39f381c9dc656325183fc293fa2b8721845694))
+
 # [1.13.0](https://github.com/yanyunchangfeng/yycf/compare/v1.12.0...v1.13.0) (2024-12-27)
 
 ### Features
