@@ -3,7 +3,7 @@
   "version": "1.13.0",
   "private": false,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "dev:host": "node host.js",
     "dev:test": "cross-env ENV=test next dev",
     "dev:debug": "NODE_OPTIONS=--inspect next dev",
