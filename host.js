@@ -17,4 +17,4 @@ function getLocalIP() {
 const localIP = getLocalIP();
 
 console.log(`🚀 Starting Next.js on http://${localIP}:3000`);
-execSync(`next dev -H ${localIP}`, { stdio: 'inherit' });
+execSync(`next dev -H ${localIP} --turbo`, { stdio: 'inherit' });

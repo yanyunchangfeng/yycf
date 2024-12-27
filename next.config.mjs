@@ -15,22 +15,21 @@ const distDir = NEXT_PUBLIC_DIST_DIR ?? undefined;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // devIndicators: {
-  //   https: true
-  // },
   assetPrefix,
   basePath,
   output: mode,
   // productionBrowserSourceMaps: true,
   distDir,
-  webpack(config, { webpack }) {
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        VERCEL_URL: JSON.stringify(VERCEL_URL)
-      })
-    );
-    return config;
+  env: {
+    VERCEL_URL
   },
+  // webpack(config, { webpack }) {
+  //   config.plugins.push(
+  //     new webpack.DefinePlugin({
+  //     })
+  //   );
+  //   return config;
+  // },
   reactStrictMode: false,
   // eslint: {
   //   // Warning: This allows production builds to successfully complete even if
@@ -52,6 +51,9 @@ const nextConfig = {
         pathname: '/**'
       }
     ]
+  },
+  experimental: {
+    turbo: {}
   }
 };
 const CorsHeaders = [
