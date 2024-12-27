@@ -1,3 +1,9 @@
+# [1.13.0](https://github.com/yanyunchangfeng/yycf/compare/v1.12.0...v1.13.0) (2024-12-27)
+
+### Features
+
+- update SideBar menuitem active ([0a2e136](https://github.com/yanyunchangfeng/yycf/commit/0a2e136156675c515a851ad70326e6e40f24bbb1))
+
 # [1.13.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.12.0...v1.13.0-rc.1) (2024-12-27)
 
 ### Features
