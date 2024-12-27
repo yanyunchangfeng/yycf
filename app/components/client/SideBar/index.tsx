@@ -35,7 +35,11 @@ export const AppSidebar: React.FC<React.PropsWithChildren> = ({ children }) => {
             <SidebarMenu>
               {MENUITEMS.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title} isActive={pathName === item.url}>
+                  <SidebarMenuButton
+                    asChild
+                    tooltip={item.title}
+                    isActive={pathName === item.url || pathName.startsWith(`${item.url}/`)}
+                  >
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
