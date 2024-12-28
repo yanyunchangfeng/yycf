@@ -1,3 +1,9 @@
+## [1.16.3-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.16.2...v1.16.3-rc.1) (2024-12-28)
+
+### Bug Fixes
+
+- browser setting lng switch lauguage show ([e613a6e](https://github.com/yanyunchangfeng/yycf/commit/e613a6e6d779ff9b85b4e0c21a13de9da8c64356))
+
 ## [1.16.2](https://github.com/yanyunchangfeng/yycf/compare/v1.16.1...v1.16.2) (2024-12-28)
 
 ### Bug Fixes
