@@ -2,17 +2,17 @@ import { Home, NotebookPen, Rss } from 'lucide-react';
 
 export const MENUITEMS = [
   {
-    title: 'Home',
+    title: 'home',
     url: '/',
     icon: Home
   },
   {
-    title: 'Notes',
+    title: 'notes',
     url: '/notes',
     icon: NotebookPen
   },
   {
-    title: 'Blog',
+    title: 'blog',
     url: '/blog',
     icon: Rss
   }

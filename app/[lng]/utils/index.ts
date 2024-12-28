@@ -6,3 +6,4 @@ export * from './logOut';
 export * from './logIn';
 export * from './refreshSession';
 export * from './toast';
+export * from './removeLocalePrefix';

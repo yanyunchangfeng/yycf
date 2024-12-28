@@ -7,24 +7,24 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
   SidebarFooter,
   SidebarHeader
 } from '@/components/ui/sidebar';
-import { DropDownUser, ModeToggle } from '@/app/components';
+import { DropDownUser, ModeToggle, LangSwitch, MenuItem } from '@/app/components';
 import { MENUITEMS } from '@/app/shared';
-import { usePathname } from 'next/navigation';
 import React from 'react';
 
-export const AppSidebar: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const pathName = usePathname();
+export const AppSidebar: React.FC<React.PropsWithChildren & { lng: string }> = ({ children, lng }) => {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <ModeToggle />
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <LangSwitch />
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
@@ -34,18 +34,7 @@ export const AppSidebar: React.FC<React.PropsWithChildren> = ({ children }) => {
           <SidebarGroupContent>
             <SidebarMenu>
               {MENUITEMS.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    asChild
-                    tooltip={item.title}
-                    isActive={pathName === item.url || pathName.startsWith(`${item.url}/`)}
-                  >
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+                <MenuItem key={item.title} lng={lng} {...item} />
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
