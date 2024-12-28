@@ -1,3 +1,9 @@
+# [1.16.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.15.0...v1.16.0-rc.1) (2024-12-28)
+
+### Features
+
+- update components Header i18n ([8e3b1a1](https://github.com/yanyunchangfeng/yycf/commit/8e3b1a1a0ebd5471d6df50c617e2077dca92a674))
+
 # [1.15.0](https://github.com/yanyunchangfeng/yycf/compare/v1.14.0...v1.15.0) (2024-12-28)
 
 ### Features
