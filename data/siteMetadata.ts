@@ -5,7 +5,7 @@ const siteMetadata = {
   author: '燕云长风',
   socialBanner: '"https://cdn.jsdelivr.net/gh/yanyunchangfeng/cdn@1.0/assets/icons/cf-icon@0,75x.png"',
   languages: ['zh', 'en'],
-  fallbackLanguage: 'zh'
+  fallbackLanguage: 'en'
 };
 
 export default siteMetadata;
