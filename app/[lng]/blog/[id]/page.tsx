@@ -1,12 +1,12 @@
 'use client';
 
 import { FC } from 'react';
-import { BlogParams, BlogEntities } from '@/app/shared';
+import { BlogParams, BlogEntities, ParamsWithLng } from '@/app/shared';
 import React from 'react';
 import { Skeleton, AspectRatioImage, Header } from '@/app/components';
 import { toast } from 'sonner';
 
-const Page: FC<BlogParams> = ({ params: { id } }) => {
+const Page: FC<BlogParams & ParamsWithLng> = ({ params: { id, lng } }) => {
   const [photos, setPhotos] = React.useState<BlogEntities>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -44,7 +44,7 @@ const Page: FC<BlogParams> = ({ params: { id } }) => {
 
   return (
     <>
-      <Header />
+      <Header lng={lng} />
       <div className="flex flex-1 justify-center items-center">{PhotoItem}</div>
     </>
   );

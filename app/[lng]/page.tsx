@@ -3,9 +3,9 @@
 import React from 'react';
 import { AspectRatioImage, Skeleton, Header } from '@/app/components';
 import { toast } from 'sonner';
-import { CatEntities } from '@/app/shared';
+import { CatEntities, ParamsWithLng } from '@/app/shared';
 
-const Home: React.FC = () => {
+const Home: React.FC<ParamsWithLng> = ({ params: { lng } }) => {
   const [cats, setCats] = React.useState<CatEntities>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <Header lng={lng} />
       <div className="flex items-center justify-center flex-1 flex-col gap-4">{items}</div>
     </>
   );
