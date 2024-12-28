@@ -1,3 +1,9 @@
+## [1.16.1](https://github.com/yanyunchangfeng/yycf/compare/v1.16.0...v1.16.1) (2024-12-28)
+
+### Bug Fixes
+
+- blog page & header ([3a3ece9](https://github.com/yanyunchangfeng/yycf/commit/3a3ece9a258ef36c71c6568adff34d95db595159))
+
 ## [1.16.1-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.16.0...v1.16.1-rc.1) (2024-12-28)
 
 ### Bug Fixes
