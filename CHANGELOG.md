@@ -1,3 +1,9 @@
+## [1.16.2-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.16.1...v1.16.2-rc.1) (2024-12-28)
+
+### Bug Fixes
+
+- langSwitch language show ([bda8796](https://github.com/yanyunchangfeng/yycf/commit/bda879604cc02f1968edfc82ed2225d02b308a0d))
+
 ## [1.16.1](https://github.com/yanyunchangfeng/yycf/compare/v1.16.0...v1.16.1) (2024-12-28)
 
 ### Bug Fixes
