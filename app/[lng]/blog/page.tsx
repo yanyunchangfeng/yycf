@@ -4,9 +4,9 @@ import { type FC } from 'react';
 import React from 'react';
 import { Skeleton, AspectRatioImage, Header } from '@/app/components';
 import { toast } from 'sonner';
-import { BlogEntities } from '@/app/shared';
+import { BlogEntities, ParamsWithLng } from '@/app/shared';
 
-const Blog: FC = () => {
+const Blog: FC<ParamsWithLng> = ({ params: { lng } }) => {
   const [photos, setPhotos] = React.useState<BlogEntities>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const fetchData = async () => {
@@ -48,7 +48,7 @@ const Blog: FC = () => {
 
   return (
     <React.Profiler id="home" onRender={console.log}>
-      <Header />
+      <Header lng={lng} />
       <div className="flex items-center justify-center flex-1 flex-col gap-4">{photoTem}</div>
     </React.Profiler>
   );
