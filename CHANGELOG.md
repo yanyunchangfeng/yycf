@@ -1,3 +1,9 @@
+# [1.15.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.14.0...v1.15.0-rc.1) (2024-12-28)
+
+### Features
+
+- add lang switch ([b0805aa](https://github.com/yanyunchangfeng/yycf/commit/b0805aabeb082310e4ee5902443709b9b6273172))
+
 # [1.14.0](https://github.com/yanyunchangfeng/yycf/compare/v1.13.0...v1.14.0) (2024-12-27)
 
 ### Features
