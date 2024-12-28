@@ -39,7 +39,7 @@ const Blog: FC<ParamsWithLng> = ({ params: { lng } }) => {
     }
     return photos.map(({ id, base64 }) => {
       return (
-        <Link key={id} href={`/blog/${id}`} className="self-center">
+        <Link key={id} href={`/${lng}/blog/${id}`} className="self-center">
           <AspectRatioImage src={base64} alt="dog" fill />
         </Link>
       );
