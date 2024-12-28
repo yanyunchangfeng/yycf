@@ -36,7 +36,7 @@ export const LangSwitch = () => {
           checked={current === locale}
           onCheckedChange={() => handleLinkClick(current)}
         >
-          {current.charAt(0).toUpperCase() + locale.slice(1)}
+          {current.charAt(0).toUpperCase() + current.slice(1)}
         </DropdownMenuCheckboxItem>
       );
     });
