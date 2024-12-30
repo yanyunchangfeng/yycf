@@ -1,3 +1,9 @@
+# [1.17.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.16.3...v1.17.0-rc.1) (2024-12-30)
+
+### Features
+
+- add suspense for server user ([15c043f](https://github.com/yanyunchangfeng/yycf/commit/15c043fad3b53f17218e989f136fcc8f2138c730))
+
 ## [1.16.3](https://github.com/yanyunchangfeng/yycf/compare/v1.16.2...v1.16.3) (2024-12-28)
 
 ### Bug Fixes
