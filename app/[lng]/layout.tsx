@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/app/globals.css';
-import { ThemeProvider } from '@/app/components';
+import { Skeleton, ThemeProvider } from '@/app/components';
 import { Toaster } from '@/components/ui/sonner';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/app/components';
@@ -11,6 +11,7 @@ import { themes, ParamsWithLng } from '@/app/shared';
 import { dir } from 'i18next';
 import { User } from '@/app/components/server/User';
 import siteMetadata from '@/data/siteMetadata';
+import { Suspense } from 'react';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -48,7 +49,9 @@ export default async function RootLayout({ children, params: { lng } }: ParamsWi
         <ThemeProvider attribute="class" defaultTheme="violet" enableSystem disableTransitionOnChange themes={themes}>
           <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar lng={lng}>
-              <User />
+              <Suspense fallback={<Skeleton />}>
+                <User />
+              </Suspense>
             </AppSidebar>
             <SidebarInset className="overflow-x-hidden px-4">{children}</SidebarInset>
           </SidebarProvider>
