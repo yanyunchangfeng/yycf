@@ -50,7 +50,7 @@ export default async function RootLayout({ children, params: { lng } }: ParamsWi
             <AppSidebar lng={lng}>
               <User />
             </AppSidebar>
-            <SidebarInset className="overflow-x-hidden px-4">{children}</SidebarInset>
+            <SidebarInset className="overflow-x-hidden px-4 pb-4">{children}</SidebarInset>
           </SidebarProvider>
         </ThemeProvider>
         <SpeedInsights />
