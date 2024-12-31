@@ -95,7 +95,7 @@ export const PaganitionContainer: React.FC = () => {
     fetchNotes({ pageNo, pageSize });
   };
   return (
-    <div className="flex justify-center gap-1 items-center mb-4 mt-2 flex-wrap">
+    <div className="flex justify-center gap-1 items-center mt-2 flex-wrap">
       <Pagination
         className="m-0 w-auto"
         current={pageNo}

@@ -39,7 +39,7 @@ const Page: FC<BlogParams & ParamsWithLng> = ({ params: { id, lng } }) => {
       return <Skeleton />;
     }
     const src = photos[0]?.base64;
-    return <AspectRatioImage src={src} fill alt="dog" className="w-[400px]" />;
+    return <AspectRatioImage src={src} fill alt="dog" className="w-1/3 max-sm:w-full" />;
   }, [isLoading, photos]);
 
   return (

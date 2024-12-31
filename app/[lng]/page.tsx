@@ -38,7 +38,16 @@ const Home: React.FC<ParamsWithLng> = ({ params: { lng } }) => {
       return <Skeleton />;
     }
     return cats.map((item) => {
-      return <AspectRatioImage key={item.id} src={item.base64} alt="cat" width={item.width} height={item.height} />;
+      return (
+        <AspectRatioImage
+          key={item.id}
+          src={item.base64}
+          alt="cat"
+          width={item.width}
+          height={item.height}
+          className="w-1/3 max-sm:w-full"
+        />
+      );
     });
   }, [cats, isLoading]);
 
