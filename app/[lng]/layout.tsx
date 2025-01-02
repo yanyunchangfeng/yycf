@@ -11,6 +11,7 @@ import { themes, ParamsWithLng } from '@/app/shared';
 import { dir } from 'i18next';
 import { User } from '@/app/components/server/User';
 import siteMetadata from '@/data/siteMetadata';
+import { ImageObject, WithContext } from 'schema-dts';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -36,6 +37,15 @@ export const metadata: Metadata = {
   alternates: siteMetadata.alternates,
   icons: siteMetadata.icons
 };
+
+const jsonLd: WithContext<ImageObject> = {
+  '@context': 'https://schema.org',
+  '@type': 'ImageObject',
+  creator: {
+    '@type': 'Person',
+    name: 'yanyunchangfeng'
+  }
+};
 // 添加静态路由
 export async function generateStaticParams() {
   return siteMetadata.languages.map((lng) => ({ lng }));
@@ -48,6 +58,7 @@ export default async function RootLayout({ children, params: { lng } }: ParamsWi
     <html lang={lng} dir={dir(lng)} suppressHydrationWarning>
       <head />
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <ThemeProvider attribute="class" defaultTheme="violet" enableSystem disableTransitionOnChange themes={themes}>
           <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar lng={lng}>

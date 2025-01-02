@@ -55,6 +55,7 @@
     "react-day-picker": "8.10.1",
     "react-dom": "^18",
     "react-i18next": "^15.2.0",
+    "schema-dts": "^1.1.2",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
