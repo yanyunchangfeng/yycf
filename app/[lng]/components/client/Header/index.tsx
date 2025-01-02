@@ -40,10 +40,9 @@ export const Header: React.FC<React.PropsWithChildren & { lng: string }> = ({ ch
     });
 
     return [{ label: 'home', href: `/${lng}`, isLast: false }, ...newBreadcrumbs];
-  }, [pathWithoutLocale, params, lng, pathName, t]);
+  }, [pathWithoutLocale, params, i18n.language]);
 
   const BreadItems = React.useMemo(() => {
-    //切换会影响渲染 故注释
     return breamCrumbData?.map((item) => {
       if (breamCrumbData?.length === 1) {
         return (
@@ -70,7 +69,7 @@ export const Header: React.FC<React.PropsWithChildren & { lng: string }> = ({ ch
         </BreadcrumbItem>
       );
     });
-  }, [breamCrumbData, i18n.language]);
+  }, [breamCrumbData]);
 
   return (
     <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
