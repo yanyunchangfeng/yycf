@@ -1,3 +1,9 @@
+# [1.17.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.16.3...v1.17.0-rc.1) (2025-01-02)
+
+### Features
+
+- update Header ([a435cd0](https://github.com/yanyunchangfeng/yycf/commit/a435cd0a4b8c1d85f16c6f5a36d508ab96c7ed8d))
+
 ## [1.16.3](https://github.com/yanyunchangfeng/yycf/compare/v1.16.2...v1.16.3) (2024-12-28)
 
 ### Bug Fixes
