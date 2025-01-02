@@ -1,3 +1,9 @@
+# [1.18.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.17.0...v1.18.0-rc.1) (2025-01-02)
+
+### Features
+
+- update metadata ([33294ba](https://github.com/yanyunchangfeng/yycf/commit/33294bae3e09b12da294cd35d7aeb4a696d28cf1))
+
 # [1.17.0](https://github.com/yanyunchangfeng/yycf/compare/v1.16.3...v1.17.0) (2025-01-02)
 
 ### Features
