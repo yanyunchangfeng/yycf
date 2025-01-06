@@ -1,3 +1,9 @@
+# [1.21.0](https://github.com/yanyunchangfeng/yycf/compare/v1.20.0...v1.21.0) (2025-01-06)
+
+### Features
+
+- add usage ([c5f6a52](https://github.com/yanyunchangfeng/yycf/commit/c5f6a5255e6e5f2323bb74975f7ea6dea981b795))
+
 # [1.21.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.20.0...v1.21.0-rc.1) (2025-01-06)
 
 ### Features
