@@ -1,3 +1,9 @@
+# [1.19.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.18.0...v1.19.0-rc.1) (2025-01-06)
+
+### Features
+
+- update seo ([3666ae8](https://github.com/yanyunchangfeng/yycf/commit/3666ae8fa59990bc86e6c644630b888101b84aa4))
+
 # [1.18.0](https://github.com/yanyunchangfeng/yycf/compare/v1.17.0...v1.18.0) (2025-01-02)
 
 ### Features
