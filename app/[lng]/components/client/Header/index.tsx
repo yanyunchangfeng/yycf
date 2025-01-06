@@ -15,6 +15,8 @@ import { usePathname, useParams } from 'next/navigation';
 import React from 'react';
 import { useTranslation } from '@/app/i18n/client';
 import { removeLocalePrefix } from '@/app/utils';
+import siteMetadata from '@/data/siteMetadata';
+// import { Image } from 'lucide-react';
 
 export const Header: React.FC<React.PropsWithChildren & { lng: string }> = ({ children, lng }) => {
   const pathName = usePathname();
@@ -36,26 +38,39 @@ export const Header: React.FC<React.PropsWithChildren & { lng: string }> = ({ ch
       if (params.slug && params.slug.includes(part)) {
         label = part; // 替换 slug
       }
-      return { label: label, href: `/${lng}${href}`, isLast: index === pathParts.length - 1 };
+      return { label: label, href: `/${lng}${href}`, isLast: index === pathParts.length - 1, isFirst: false };
     });
 
-    return [{ label: 'home', href: `/${lng}`, isLast: false }, ...newBreadcrumbs];
-  }, [pathWithoutLocale, params, i18n.language]);
+    return [{ label: 'home', href: `/${lng}`, isLast: false, isFirst: true }, ...newBreadcrumbs];
+  }, [pathWithoutLocale, params, lng, i18n.language]);
 
   const BreadItems = React.useMemo(() => {
     return breamCrumbData?.map((item) => {
-      if (breamCrumbData?.length === 1) {
+      if (item?.isFirst) {
         return (
-          <BreadcrumbItem key={item.href}>
-            <BreadcrumbPage suppressHydrationWarning>{t(item.label)}</BreadcrumbPage>
-          </BreadcrumbItem>
+          <React.Fragment key={item.href}>
+            <BreadcrumbItem>
+              <h2>
+                <BreadcrumbLink
+                  href={item.href}
+                  suppressHydrationWarning
+                  title={siteMetadata.origin}
+                  className="flex items-center gap-2 [&>svg]:size-4"
+                >
+                  {/* <Image /> */}
+                  {siteMetadata.origin}
+                </BreadcrumbLink>
+              </h2>
+            </BreadcrumbItem>
+            {breamCrumbData.length !== 1 ? <BreadcrumbSeparator /> : null}
+          </React.Fragment>
         );
       }
       if (!item?.isLast) {
         return (
           <React.Fragment key={item.href}>
             <BreadcrumbItem>
-              <BreadcrumbLink href={item.href} suppressHydrationWarning>
+              <BreadcrumbLink href={item.href} suppressHydrationWarning title={siteMetadata.keywords.join(',')}>
                 {t(item.label)}
               </BreadcrumbLink>
             </BreadcrumbItem>

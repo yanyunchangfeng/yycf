@@ -46,7 +46,7 @@ export const LangSwitch = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {/* <Button variant="outline" size="icon"> */}
-        <SidebarMenuButton variant={'outline'} className="justify-center">
+        <SidebarMenuButton variant={'outline'} className="justify-center bg-transparent shadow-none">
           <span>{locale.charAt(0).toUpperCase() + locale.slice(1)}</span>
           <span className="sr-only">Toggle language</span>
           {/* </Button> */}

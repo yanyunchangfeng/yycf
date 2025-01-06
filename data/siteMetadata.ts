@@ -1,6 +1,7 @@
 const siteMetadata = {
   siteUrl: 'https://yycf.vercel.app',
-  title: `Notes`,
+  title: `Notes | Record Beautiful Moments`,
+  origin: 'yycf.vercel.app',
   description: 'records notes here',
   author: 'yanyunchangfeng',
   keywords: ['yanyunchangfeng', 'Notes'],
@@ -23,7 +24,10 @@ const siteMetadata = {
   },
   socialBanner: '"https://cdn.jsdelivr.net/gh/yanyunchangfeng/cdn@1.0/assets/icons/cf-icon@0,75x.png"',
   languages: ['zh', 'en'],
-  fallbackLanguage: 'en'
+  fallbackLanguage: 'en',
+  other: {
+    'google-adsense-account': 'ca-pub-1280070184754647'
+  }
 };
 
 export default siteMetadata;

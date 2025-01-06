@@ -22,7 +22,6 @@ export const useUserStore = createPersistStore(
       async fetchUser() {
         const supabase = createClient();
         supabase.auth.onAuthStateChange(async (event, session) => {
-          console.log('🚀~ event:', event);
           switch (event) {
             case 'SIGNED_IN':
               refreshSession();
