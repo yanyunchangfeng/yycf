@@ -1,14 +1,12 @@
 'use client';
 
 import React from 'react';
-import { AspectRatioImage, Skeleton, Header } from '@/app/components';
+import { AspectRatioImage, Skeleton, Header, Introduction } from '@/app/components';
 import { toast } from 'sonner';
 import { CatEntities, ParamsWithLng } from '@/app/shared';
-import { useTranslation } from '@/app/i18n/client';
 import siteMetadata from '@/data/siteMetadata';
 
 const Cat: React.FC<ParamsWithLng> = ({ params: { lng } }) => {
-  const { t } = useTranslation(lng, 'basic');
   const [cats, setCats] = React.useState<CatEntities>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -57,9 +55,7 @@ const Cat: React.FC<ParamsWithLng> = ({ params: { lng } }) => {
   return (
     <>
       <Header lng={lng} />
-      <h1 className="text-center p-2" suppressHydrationWarning>
-        {t('title')}
-      </h1>
+      <Introduction lng={lng} />
       <div className="flex items-center justify-center flex-1 flex-col gap-4">{items}</div>
     </>
   );

@@ -50,12 +50,12 @@ export const Header: React.FC<React.PropsWithChildren & { lng: string }> = ({ ch
         return (
           <React.Fragment key={item.href}>
             <BreadcrumbItem>
-              <h2>
+              <h2 className="text-xl">
                 <BreadcrumbLink
                   href={item.href}
                   suppressHydrationWarning
                   title={siteMetadata.origin}
-                  className="flex items-center gap-2 [&>svg]:size-4"
+                  className="flex items-center gap-2 [&_svg]:size-6"
                 >
                   {/* <Image /> */}
                   {siteMetadata.origin}
@@ -89,7 +89,7 @@ export const Header: React.FC<React.PropsWithChildren & { lng: string }> = ({ ch
   return (
     <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
       <div className="flex items-center gap-2">
-        <SidebarTrigger className="-ml-1" />
+        <SidebarTrigger className="[&_svg]:size-6" />
         <Separator orientation="vertical" className="mr-2 h-4" />
         <Breadcrumb>
           <BreadcrumbList>{BreadItems}</BreadcrumbList>

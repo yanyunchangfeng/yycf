@@ -2,14 +2,12 @@
 import Link from 'next/link';
 import { type FC } from 'react';
 import React from 'react';
-import { Skeleton, AspectRatioImage, Header } from '@/app/components';
+import { Skeleton, AspectRatioImage, Header, Introduction } from '@/app/components';
 import { toast } from 'sonner';
 import { BlogEntities, ParamsWithLng } from '@/app/shared';
-import { useTranslation } from '@/app/i18n/client';
 import siteMetadata from '@/data/siteMetadata';
 
 const Dog: FC<ParamsWithLng> = ({ params: { lng } }) => {
-  const { t } = useTranslation(lng, 'basic');
   const [photos, setPhotos] = React.useState<BlogEntities>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const fetchData = async () => {
@@ -52,9 +50,7 @@ const Dog: FC<ParamsWithLng> = ({ params: { lng } }) => {
   return (
     <React.Profiler id="dog" onRender={console.log}>
       <Header lng={lng} />
-      <h1 className="text-center p-2" suppressHydrationWarning>
-        {t('title')}
-      </h1>
+      <Introduction lng={lng} />
       <div className="flex items-center justify-center flex-1 flex-col gap-4">{photoTem}</div>
     </React.Profiler>
   );
