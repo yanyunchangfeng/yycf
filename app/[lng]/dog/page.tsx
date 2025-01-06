@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { type FC } from 'react';
 import React from 'react';
-import { Skeleton, AspectRatioImage, Header, Introduction } from '@/app/components';
+import { Skeleton, AspectRatioImage, Header, Introduction, Usage } from '@/app/components';
 import { toast } from 'sonner';
 import { BlogEntities, ParamsWithLng } from '@/app/shared';
 import siteMetadata from '@/data/siteMetadata';
@@ -52,6 +52,7 @@ const Dog: FC<ParamsWithLng> = ({ params: { lng } }) => {
       <Header lng={lng} />
       <Introduction lng={lng} />
       <div className="flex items-center justify-center flex-1 flex-col gap-4">{photoTem}</div>
+      <Usage lng={lng} />
     </React.Profiler>
   );
 };
