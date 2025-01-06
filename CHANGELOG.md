@@ -1,3 +1,9 @@
+# [1.20.0](https://github.com/yanyunchangfeng/yycf/compare/v1.19.0...v1.20.0) (2025-01-06)
+
+### Features
+
+- add introduction ([677acbe](https://github.com/yanyunchangfeng/yycf/commit/677acbe2b5773f86e70e3bab453733950f945cbb))
+
 # [1.20.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.19.0...v1.20.0-rc.1) (2025-01-06)
 
 ### Features
