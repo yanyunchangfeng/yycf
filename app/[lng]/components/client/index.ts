@@ -15,3 +15,4 @@ export * from './Header';
 export * from './LangSwitch';
 export * from './MenuItem';
 export * from './Introduction';
+export * from './Usage';

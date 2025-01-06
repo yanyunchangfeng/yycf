@@ -3,3 +3,7 @@ export interface ParamsWithLng {
     lng: string;
   };
 }
+
+export interface Lng {
+  lng: string;
+}

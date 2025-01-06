@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import { BlogParams, BlogEntities, ParamsWithLng } from '@/app/shared';
 import React from 'react';
-import { Skeleton, AspectRatioImage, Header, Introduction } from '@/app/components';
+import { Skeleton, AspectRatioImage, Header, Introduction, Usage } from '@/app/components';
 import { toast } from 'sonner';
 import siteMetadata from '@/data/siteMetadata';
 
@@ -48,6 +48,7 @@ const Page: FC<BlogParams & ParamsWithLng> = ({ params: { id, lng } }) => {
       <Header lng={lng} />
       <Introduction lng={lng} />
       <div className="flex flex-1 justify-center items-center">{PhotoItem}</div>
+      <Usage lng={lng} />
     </>
   );
 };

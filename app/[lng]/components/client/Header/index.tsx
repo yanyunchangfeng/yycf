@@ -16,9 +16,10 @@ import React from 'react';
 import { useTranslation } from '@/app/i18n/client';
 import { removeLocalePrefix } from '@/app/utils';
 import siteMetadata from '@/data/siteMetadata';
+import { Lng } from '@/app/shared';
 // import { Image } from 'lucide-react';
 
-export const Header: React.FC<React.PropsWithChildren & { lng: string }> = ({ children, lng }) => {
+export const Header: React.FC<React.PropsWithChildren & Lng> = ({ children, lng }) => {
   const pathName = usePathname();
   const pathWithoutLocale = removeLocalePrefix(pathName);
   const params = useParams();

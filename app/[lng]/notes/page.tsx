@@ -9,7 +9,7 @@ import {
   SearchNoteDate,
   AddNote
 } from '@/app/notes/components';
-import { Header, Introduction } from '@/app/components';
+import { Header, Introduction, Usage } from '@/app/components';
 import { useSidebar } from '@/components/ui/sidebar';
 import React from 'react';
 import { ParamsWithLng } from '@/app/shared';
@@ -50,6 +50,7 @@ const NotePage: React.FC<ParamsWithLng> = ({ params: { lng } }) => {
           <PaganitionContainer />
           <AlertNote />
         </div>
+        <Usage lng={lng} />
       </>
     );
   }, [isMobile]);

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { AspectRatioImage, Skeleton, Header, Introduction } from '@/app/components';
+import { AspectRatioImage, Skeleton, Header, Introduction, Usage } from '@/app/components';
 import { toast } from 'sonner';
 import { CatEntities, ParamsWithLng } from '@/app/shared';
 import siteMetadata from '@/data/siteMetadata';
@@ -57,6 +57,7 @@ const Cat: React.FC<ParamsWithLng> = ({ params: { lng } }) => {
       <Header lng={lng} />
       <Introduction lng={lng} />
       <div className="flex items-center justify-center flex-1 flex-col gap-4">{items}</div>
+      <Usage lng={lng} />
     </>
   );
 };

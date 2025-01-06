@@ -3,6 +3,12 @@
   "notes": "Notes",
   "dog": "Dog",
   "cat": "Cat",
+  "title": "Notes",
   "introduction": "Record Beautiful Moments",
-  "title": "Notes"
+  "usageConfig": {
+    "title": "How to Use AI Image Generator ?",
+    "firstStep": "Visit the Official Website Go to image-ai.net and explore the clean, user-friendly homepage.",
+    "secondStep": "In the prompt box, describe what you’d like to see. It can be as simple as “futuristic city skyline” or “vintage-style poster.” Once you’re satisfied with your prompt, hit “Generate.”",
+    "thirdStep": "Preview and Download  Within seconds, image-ai.net presents you with several image options. Tweak your prompt or parameters as needed, then download the perfect final result"
+  }
 }
