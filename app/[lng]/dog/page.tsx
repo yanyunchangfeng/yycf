@@ -5,12 +5,15 @@ import React from 'react';
 import { Skeleton, AspectRatioImage, Header } from '@/app/components';
 import { toast } from 'sonner';
 import { BlogEntities, ParamsWithLng } from '@/app/shared';
+import { useTranslation } from '@/app/i18n/client';
+import siteMetadata from '@/data/siteMetadata';
 
-const Blog: FC<ParamsWithLng> = ({ params: { lng } }) => {
+const Dog: FC<ParamsWithLng> = ({ params: { lng } }) => {
+  const { t } = useTranslation(lng, 'basic');
   const [photos, setPhotos] = React.useState<BlogEntities>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const fetchData = async () => {
-    const res = await fetch(`/api/blog`);
+    const res = await fetch(`/api/dog`);
     const data = await res.json();
     if (!res.ok) {
       const message = data?.message ?? 'Unknown error';
@@ -39,18 +42,21 @@ const Blog: FC<ParamsWithLng> = ({ params: { lng } }) => {
     }
     return photos.map(({ id, base64 }) => {
       return (
-        <Link key={id} href={`/${lng}/blog/${id}`} className="w-1/3 max-sm:w-full">
-          <AspectRatioImage src={base64} alt="dog" fill />
+        <Link key={id} href={`/${lng}/dog/${id}`} className="w-1/3 max-sm:w-full">
+          <AspectRatioImage src={base64} alt={siteMetadata.origin} fill />
         </Link>
       );
     });
   }, [photos, isLoading]);
 
   return (
-    <React.Profiler id="home" onRender={console.log}>
+    <React.Profiler id="dog" onRender={console.log}>
       <Header lng={lng} />
+      <h1 className="text-center p-2" suppressHydrationWarning>
+        {t('title')}
+      </h1>
       <div className="flex items-center justify-center flex-1 flex-col gap-4">{photoTem}</div>
     </React.Profiler>
   );
 };
-export default Blog;
+export default Dog;

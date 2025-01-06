@@ -1,10 +1,10 @@
-import { Home, NotebookPen, Rss } from 'lucide-react';
+import { NotebookPen, Dog, Cat } from 'lucide-react';
 
 export const MENUITEMS = [
   {
-    title: 'home',
+    title: 'cat',
     url: '/',
-    icon: Home
+    icon: Cat
   },
   {
     title: 'notes',
@@ -12,8 +12,8 @@ export const MENUITEMS = [
     icon: NotebookPen
   },
   {
-    title: 'blog',
-    url: '/blog',
-    icon: Rss
+    title: 'dog',
+    url: '/dog',
+    icon: Dog
   }
 ];

@@ -35,7 +35,8 @@ export const metadata: Metadata = {
   description: siteMetadata.description,
   keywords: siteMetadata.keywords,
   alternates: siteMetadata.alternates,
-  icons: siteMetadata.icons
+  icons: siteMetadata.icons,
+  other: siteMetadata.other
 };
 
 const jsonLd: WithContext<ImageObject> = {
@@ -56,7 +57,13 @@ export default async function RootLayout({ children, params: { lng } }: ParamsWi
 
   return (
     <html lang={lng} dir={dir(lng)} suppressHydrationWarning>
-      <head />
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1280070184754647"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <ThemeProvider attribute="class" defaultTheme="violet" enableSystem disableTransitionOnChange themes={themes}>
