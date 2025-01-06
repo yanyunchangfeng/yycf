@@ -33,7 +33,6 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: siteMetadata.title,
   description: siteMetadata.description,
-  keywords: siteMetadata.keywords,
   alternates: siteMetadata.alternates,
   icons: siteMetadata.icons,
   other: siteMetadata.other

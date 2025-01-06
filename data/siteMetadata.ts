@@ -4,7 +4,6 @@ const siteMetadata = {
   origin: 'yycf.vercel.app',
   description: 'records notes here',
   author: 'yanyunchangfeng',
-  keywords: ['yanyunchangfeng', 'Notes'],
   alternates: {
     canonical: 'https://yycf.vercel.app',
     languages: {

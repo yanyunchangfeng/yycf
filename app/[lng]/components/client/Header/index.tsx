@@ -70,7 +70,7 @@ export const Header: React.FC<React.PropsWithChildren & { lng: string }> = ({ ch
         return (
           <React.Fragment key={item.href}>
             <BreadcrumbItem>
-              <BreadcrumbLink href={item.href} suppressHydrationWarning title={siteMetadata.keywords.join(',')}>
+              <BreadcrumbLink href={item.href} suppressHydrationWarning title={siteMetadata.origin}>
                 {t(item.label)}
               </BreadcrumbLink>
             </BreadcrumbItem>
