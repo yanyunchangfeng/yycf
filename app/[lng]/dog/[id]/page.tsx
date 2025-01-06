@@ -3,14 +3,12 @@
 import { FC } from 'react';
 import { BlogParams, BlogEntities, ParamsWithLng } from '@/app/shared';
 import React from 'react';
-import { Skeleton, AspectRatioImage, Header } from '@/app/components';
+import { Skeleton, AspectRatioImage, Header, Introduction } from '@/app/components';
 import { toast } from 'sonner';
-import { useTranslation } from '@/app/i18n/client';
 import siteMetadata from '@/data/siteMetadata';
 
 const Page: FC<BlogParams & ParamsWithLng> = ({ params: { id, lng } }) => {
   const [photos, setPhotos] = React.useState<BlogEntities>([]);
-  const { t } = useTranslation(lng, 'basic');
   const [isLoading, setIsLoading] = React.useState(true);
 
   const fetchData = async () => {
@@ -48,9 +46,7 @@ const Page: FC<BlogParams & ParamsWithLng> = ({ params: { id, lng } }) => {
   return (
     <>
       <Header lng={lng} />
-      <h1 className="text-center p-2" suppressHydrationWarning>
-        {t('title')}
-      </h1>
+      <Introduction lng={lng} />
       <div className="flex flex-1 justify-center items-center">{PhotoItem}</div>
     </>
   );
