@@ -26,7 +26,8 @@ const siteMetadata = {
   fallbackLanguage: 'en',
   other: {
     'google-adsense-account': 'ca-pub-1280070184754647'
-  }
+  },
+  github: 'https://github.com/yanyunchangfeng'
 };
 
 export default siteMetadata;

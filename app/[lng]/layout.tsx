@@ -11,7 +11,7 @@ import { themes, ParamsWithLng } from '@/app/shared';
 import { dir } from 'i18next';
 import { User } from '@/app/components/server/User';
 import siteMetadata from '@/data/siteMetadata';
-import { ImageObject, WithContext } from 'schema-dts';
+import { Person, WithContext } from 'schema-dts';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
   other: siteMetadata.other
 };
 
-const jsonLd: WithContext<ImageObject> = {
+const jsonLd: WithContext<Person> = {
   '@context': 'https://schema.org',
-  '@type': 'ImageObject',
-  creator: {
-    '@type': 'Person',
-    name: 'yanyunchangfeng'
-  }
+  '@type': 'Person',
+  name: siteMetadata.author,
+  url: siteMetadata.siteUrl,
+  description: siteMetadata.description,
+  sameAs: [siteMetadata.github]
 };
 // 添加静态路由
 export async function generateStaticParams() {
