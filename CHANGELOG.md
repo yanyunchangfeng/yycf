@@ -1,3 +1,9 @@
+# [1.22.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.21.0...v1.22.0-rc.1) (2025-01-07)
+
+### Features
+
+- update jsonLd ([96139e4](https://github.com/yanyunchangfeng/yycf/commit/96139e4a341ade8a09996b13ac78c8f114812314))
+
 # [1.21.0](https://github.com/yanyunchangfeng/yycf/compare/v1.20.0...v1.21.0) (2025-01-06)
 
 ### Features
