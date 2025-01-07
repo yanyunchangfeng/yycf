@@ -1,5 +1,6 @@
 import { createClient } from '@/app/utils/supabase/server';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import siteMetadata from '@/data/siteMetadata';
 
 export async function User() {
   const supabase = await createClient();
@@ -9,7 +10,7 @@ export async function User() {
   return (
     <>
       <Avatar className="h-8 w-8 rounded-lg">
-        <AvatarImage src={user?.user_metadata?.avatar_url} />
+        <AvatarImage src={user?.user_metadata?.avatar_url} alt={siteMetadata.origin} />
         <AvatarFallback>{user?.user_metadata?.name || 'N/A'}</AvatarFallback>
       </Avatar>
       <div className="grid flex-1 text-left text-sm leading-tight">

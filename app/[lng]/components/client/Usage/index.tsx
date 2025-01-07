@@ -11,9 +11,9 @@ export const Usage: React.FC<Lng> = ({ lng }) => {
         <h2 className="text-xl self-center" suppressHydrationWarning>
           {t('usageConfig.title')}
         </h2>
-        <p suppressHydrationWarning>{t('usageConfig.firstStep')}</p>
-        <p suppressHydrationWarning>{t('usageConfig.secondStep')}</p>
-        <p suppressHydrationWarning>{t('usageConfig.thirdStep')}</p>
+        <p suppressHydrationWarning>{t('usageConfig.first')}</p>
+        <p suppressHydrationWarning>{t('usageConfig.second')}</p>
+        <p suppressHydrationWarning>{t('usageConfig.third')}</p>
       </div>
     </>
   );

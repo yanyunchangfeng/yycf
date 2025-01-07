@@ -5,10 +5,14 @@
   "cat": "猫",
   "title": "笔记",
   "introduction": "记录美好时刻",
+  "introConfig": {
+    "first": "记录美好时刻",
+    "second": ""
+  },
   "usageConfig": {
     "title": "How to Use AI Image Generator ?",
-    "firstStep": "Visit the Official Website Go to image-ai.net and explore the clean, user-friendly homepage.",
-    "secondStep": "In the prompt box, describe what you’d like to see. It can be as simple as “futuristic city skyline” or “vintage-style poster.” Once you’re satisfied with your prompt, hit “Generate.”",
-    "thirdStep": "Preview and Download  Within seconds, image-ai.net presents you with several image options. Tweak your prompt or parameters as needed, then download the perfect final result"
+    "first": "Visit the Official Website Go to image-ai.net and explore the clean, user-friendly homepage.",
+    "second": "In the prompt box, describe what you’d like to see. It can be as simple as “futuristic city skyline” or “vintage-style poster.” Once you’re satisfied with your prompt, hit “Generate.”",
+    "third": "Preview and Download  Within seconds, image-ai.net presents you with several image options. Tweak your prompt or parameters as needed, then download the perfect final result"
   }
 }

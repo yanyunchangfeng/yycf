@@ -1,15 +1,17 @@
 import { useTranslation } from '@/app/i18n/client';
-import { Lng } from '@/app/shared';
 
-export const Introduction: React.FC<Lng> = ({ lng }) => {
+export const Introduction: React.FC<{ lng: string }> = ({ lng }) => {
   const { t } = useTranslation(lng, 'basic');
   return (
-    <div className="flex flex-col justify-center items-center gap-2 mb-4">
-      <h1 className="text-6xl font-bold" suppressHydrationWarning>
+    <div className="flex flex-col gap-2 mb-4  w-1/2 mx-auto max-sm:w-full">
+      <h1 className="text-6xl font-bold self-center" suppressHydrationWarning>
         {t('title')}
       </h1>
       <p className="text-lg" suppressHydrationWarning>
-        {t('introduction')}
+        {t('introConfig.first')}
+      </p>
+      <p className="text-lg" suppressHydrationWarning>
+        {t('introConfig.second')}
       </p>
     </div>
   );
