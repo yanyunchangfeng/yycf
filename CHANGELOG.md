@@ -1,3 +1,9 @@
+# [1.23.0](https://github.com/yanyunchangfeng/yycf/compare/v1.22.0...v1.23.0) (2025-01-07)
+
+### Features
+
+- update seo ([9984b76](https://github.com/yanyunchangfeng/yycf/commit/9984b7671e8c5f46ef13d6a9af2e856992689cad))
+
 # [1.23.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.22.0...v1.23.0-rc.1) (2025-01-07)
 
 ### Features
