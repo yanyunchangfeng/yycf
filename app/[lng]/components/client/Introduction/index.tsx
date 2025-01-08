@@ -3,7 +3,7 @@ import { useTranslation } from '@/app/i18n/client';
 export const Introduction: React.FC<{ lng: string }> = ({ lng }) => {
   const { t } = useTranslation(lng, 'basic');
   return (
-    <div className="flex flex-col gap-2 mb-4  w-1/2 mx-auto max-sm:w-full">
+    <div className="flex flex-col gap-2 mb-4">
       <h1 className="text-6xl font-bold self-center" suppressHydrationWarning>
         {t('title')}
       </h1>
