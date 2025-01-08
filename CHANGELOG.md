@@ -1,3 +1,9 @@
+# [1.24.0](https://github.com/yanyunchangfeng/yycf/compare/v1.23.0...v1.24.0) (2025-01-08)
+
+### Features
+
+- update layout ([4c72208](https://github.com/yanyunchangfeng/yycf/commit/4c7220847ef01f47c4c4297399ba31e35d7dd7ec))
+
 # [1.24.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.23.0...v1.24.0-rc.1) (2025-01-08)
 
 ### Features
