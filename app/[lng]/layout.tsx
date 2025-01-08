@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/app/globals.css';
-import { ThemeProvider } from '@/app/components';
+import { ThemeProvider, Header } from '@/app/components';
 import { Toaster } from '@/components/ui/sonner';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/app/components';
@@ -70,7 +70,10 @@ export default async function RootLayout({ children, params: { lng } }: ParamsWi
             <AppSidebar lng={lng}>
               <User />
             </AppSidebar>
-            <SidebarInset className="overflow-x-hidden px-4 pb-4">{children}</SidebarInset>
+            <SidebarInset className="overflow-x-hidden px-4 pb-4">
+              <Header lng={lng} />
+              <div className="max-w-screen-lg mx-auto container flex flex-1 flex-col">{children}</div>
+            </SidebarInset>
           </SidebarProvider>
         </ThemeProvider>
         <SpeedInsights />

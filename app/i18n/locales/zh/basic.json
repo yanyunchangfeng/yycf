@@ -4,15 +4,14 @@
   "dog": "狗",
   "cat": "猫",
   "title": "笔记",
-  "introduction": "记录美好时刻",
   "introConfig": {
-    "first": "记录美好时刻",
+    "first": "记录美好时刻，品味珍贵人生。",
     "second": ""
   },
   "usageConfig": {
-    "title": "How to Use AI Image Generator ?",
-    "first": "Visit the Official Website Go to image-ai.net and explore the clean, user-friendly homepage.",
-    "second": "In the prompt box, describe what you’d like to see. It can be as simple as “futuristic city skyline” or “vintage-style poster.” Once you’re satisfied with your prompt, hit “Generate.”",
-    "third": "Preview and Download  Within seconds, image-ai.net presents you with several image options. Tweak your prompt or parameters as needed, then download the perfect final result"
+    "title": "如何使用AI图像生成器？",
+    "first": "访问官方网站，打开 image-ai.net，即可看到简洁清晰的首页界面。",
+    "second": "输入描述，在输入框里添加简要的文字描述，如“科技感海报背景”、“唯美插画风”或任何你能想象到的关键词，并点击生成。",
+    "third": "几秒钟内，image-ai.net根据您的提示提供一张高质量图像。如果需要，请调整您的提示并重新生成，直到您获得所需的图像。之后，只需下载最终结果即可。"
   }
 }

@@ -7,7 +7,7 @@ export const Usage: React.FC<Lng> = ({ lng }) => {
   return (
     <>
       <Separator className="my-8" />
-      <div className="flex flex-col gap-4  w-1/2 mx-auto max-sm:w-full">
+      <div className="flex flex-col gap-2">
         <h2 className="text-xl self-center" suppressHydrationWarning>
           {t('usageConfig.title')}
         </h2>

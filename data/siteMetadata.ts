@@ -2,7 +2,7 @@ const siteMetadata = {
   siteUrl: 'https://yycf.vercel.app',
   title: `yycf.vercel.app | Notes`,
   origin: 'yycf.vercel.app',
-  description: 'Record Beautiful Moments',
+  description: 'Record Beautiful Moments , cherish the precious journey of life.',
   author: 'yanyunchangfeng',
   alternates: {
     canonical: 'https://yycf.vercel.app',
