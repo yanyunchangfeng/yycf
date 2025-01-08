@@ -2,7 +2,7 @@ import { NotebookPen, Dog, Cat } from 'lucide-react';
 
 export const MENUITEMS = [
   {
-    title: 'cat',
+    title: 'home',
     url: '/',
     icon: Cat
   },

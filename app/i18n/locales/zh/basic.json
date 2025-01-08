@@ -1,9 +1,8 @@
 {
-  "home": "首页",
+  "home": "猫",
   "notes": "笔记",
   "dog": "狗",
-  "cat": "猫",
-  "title": "笔记",
+  "title": "Notes",
   "introConfig": {
     "first": "记录美好时刻，品味珍贵人生。",
     "second": ""
