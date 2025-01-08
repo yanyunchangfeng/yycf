@@ -1,3 +1,9 @@
+# [1.25.0](https://github.com/yanyunchangfeng/yycf/compare/v1.24.0...v1.25.0) (2025-01-08)
+
+### Features
+
+- remove ads ([329652b](https://github.com/yanyunchangfeng/yycf/commit/329652bd27d5600768cab37d26b5d5bd5192c73a))
+
 # [1.25.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.24.0...v1.25.0-rc.1) (2025-01-08)
 
 ### Features
