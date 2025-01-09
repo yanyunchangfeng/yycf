@@ -1,3 +1,9 @@
+# [1.26.0-rc.1](https://github.com/yanyunchangfeng/yycf/compare/v1.25.0...v1.26.0-rc.1) (2025-01-09)
+
+### Features
+
+- add robots & update middleware withLanguage ([9861273](https://github.com/yanyunchangfeng/yycf/commit/9861273066483c584b8b0b34d2442b61a48a2341))
+
 # [1.25.0](https://github.com/yanyunchangfeng/yycf/compare/v1.24.0...v1.25.0) (2025-01-08)
 
 ### Features
