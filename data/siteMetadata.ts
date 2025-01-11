@@ -5,10 +5,10 @@ const siteMetadata = {
   description: 'Record Beautiful Moments , cherish the precious journey of life.',
   author: 'yanyunchangfeng',
   alternates: {
-    canonical: 'https://yycf.vercel.app',
+    canonical: 'https://yycf.vercel.app/',
     languages: {
-      'en-US': 'https://yycf.vercel.app/en',
-      'zh-CN': 'https://yycf.vercel.app/zh'
+      en: 'https://yycf.vercel.app/',
+      zh: 'https://yycf.vercel.app/zh'
     }
     // media: {
     //   'only screen and (max-width: 600px)': 'https://ai-music-next.vercel.app/mobile'
@@ -18,7 +18,7 @@ const siteMetadata = {
     // }
   },
   icons: {
-    icon: '/favicon.ico',
+    // icon: '/favicon.ico',
     apple: '/apple-touch-icon.png'
   },
   socialBanner: '"https://cdn.jsdelivr.net/gh/yanyunchangfeng/cdn@1.0/assets/icons/cf-icon@0,75x.png"',

@@ -1,3 +1,4 @@
+import siteMetadata from '@/data/siteMetadata';
 import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
@@ -5,7 +6,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/zh/', '/zh/dog', '/zh/cat']
-    }
+      disallow: ['/_next/*']
+    },
+    host: siteMetadata.siteUrl,
+    sitemap: `${siteMetadata.siteUrl}/sitemap.xml`
   };
 }
