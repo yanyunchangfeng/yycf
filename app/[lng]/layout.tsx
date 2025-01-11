@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   title: siteMetadata.title,
   description: siteMetadata.description,
   alternates: siteMetadata.alternates,
-  icons: siteMetadata.icons
-  // other: siteMetadata.other
+  icons: siteMetadata.icons,
+  other: siteMetadata.other
 };
 
 const jsonLd: WithContext<Person> = {
@@ -57,11 +57,11 @@ export default async function RootLayout({ children, params: { lng } }: ParamsWi
   return (
     <html lang={lng} dir={dir(lng)} suppressHydrationWarning>
       <head>
-        {/* <script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1280070184754647"
           crossOrigin="anonymous"
-        ></script> */}
+        ></script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
